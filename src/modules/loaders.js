@@ -2,8 +2,9 @@
 import { scene } from './setup'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
+import { loadingManager } from './logicLoading'
 
-const loader = new GLTFLoader()
+const loader = new GLTFLoader(loadingManager)
 const dracoLoader = new DRACOLoader()
 dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/')
 

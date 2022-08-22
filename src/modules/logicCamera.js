@@ -4,15 +4,24 @@ import { scene, renderer, sizes } from './setup'
 import { loadGLTF } from "./loaders"
 
 let blenderCamera
-
 const loadCamera = () => {
   loadGLTF('camera.glb').then(gltf => {
     blenderCamera = gltf.cameras[0]
     blenderCamera.aspect = sizes.width / sizes.height
     blenderCamera.updateProjectionMatrix()
-  })
-  
-  // resize
+
+    handleWindowResize()
+    
+    const update = () =>
+    { 
+      renderer.render(scene, blenderCamera)
+      window.requestAnimationFrame(update)
+    }
+    update()
+  })  
+}
+
+const handleWindowResize = () => {
   window.addEventListener('resize', () =>
   {
     // Update sizes
@@ -25,14 +34,6 @@ const loadCamera = () => {
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   })
-  
-  const tick = () =>
-  {
-    if (blenderCamera) renderer.render(scene, blenderCamera)
-    
-    window.requestAnimationFrame(tick)
-  }
-  tick()
 }
 
 export { loadCamera }

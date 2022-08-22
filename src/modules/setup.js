@@ -18,6 +18,11 @@ const clock = new THREE.Clock()
 // renderer
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
+  antialias:true
 })
+renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.setClearColor(0xffffff, 1)
+renderer.outputEncoding = THREE.sRGBEncoding
 
 export { gui, canvas, scene, sizes, clock, renderer }

@@ -2,8 +2,13 @@
 import './style.css'
 import * as THREE from 'three'
 import { gui, canvas, scene, sizes, clock, renderer } from './modules/setup'
-import { loadCharacter } from './modules/logicCharacter'
+import { character, characterHeadbone, loadCharacter } from './modules/logicCharacter'
 import { loadCamera } from './modules/logicCamera'
+
+// Lights
+const light = new THREE.DirectionalLight(0xffffff, 1)
+light.position.set(4, 4, 10)
+scene.add(light)
 
 // Camera
 loadCamera()
@@ -11,14 +16,11 @@ loadCamera()
 // character
 loadCharacter()
 
-// Lights
-const pointLight = new THREE.PointLight(0xffffff, 1)
-pointLight.position.x = 1
-pointLight.position.y = 4
-pointLight.position.z = 1
-scene.add(pointLight)
-
 // renderer
-renderer.setSize(sizes.width, sizes.height)
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.setClearColor(0xffffff, 1)
+
+
+const start = () => {
+  light.target = characterHeadbone
+}
+
+export { start }
