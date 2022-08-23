@@ -8,13 +8,20 @@ const gui = new dat.GUI()
 const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
+// clock
+const clock = new THREE.Clock()
+let deltaTime
+const update = () =>
+{ 
+  deltaTime = clock.getDelta()
+  window.requestAnimationFrame(update)
+}
+update()
 // screen size
 const sizes = {
   width: window.innerWidth,
   height: window.innerHeight
 }
-// clock
-const clock = new THREE.Clock()
 // renderer
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
@@ -25,4 +32,4 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setClearColor(0xffffff, 1)
 renderer.outputEncoding = THREE.sRGBEncoding
 
-export { gui, canvas, scene, sizes, clock, renderer }
+export { gui, canvas, scene, sizes, clock, deltaTime, renderer }

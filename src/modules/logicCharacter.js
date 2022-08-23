@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import * as THREE from 'three'
+import { LoopOnce } from 'three'
+import { customToonMaterial } from './customMaterial'
 import { loadGLTF } from "./loaders"
-import { scene } from './setup'
+import { raycastHitPosition } from './logicCamera'
+import { clock, deltaTime, scene } from './setup'
 
 let character
 let characterHeadbone
@@ -15,8 +18,11 @@ const outlineMaterial = new THREE.MeshBasicMaterial({
 const loadCharacter = () => {
   loadGLTF('delutaya_rigged.glb').then(gltf => {
     character = gltf.scene
+    const mixer = new THREE.AnimationMixer(gltf.scene)
+    const characterClips = gltf.animations
     
     gltf.scene.traverse(object => {
+      // if material name equals these, add toon material
       if(object.type == 'SkinnedMesh') {
         switch (object.material.name) {
           case 'clothes': {
@@ -25,9 +31,6 @@ const loadCharacter = () => {
           }
           case 'body': {
             addToonMaterial(object)
-            console.log(object.morphTargetDictionary)
-            console.log(object)
-            object.morphTargetInfluences[1] = 0.2
             // addOutline(object)
             break;
           }
@@ -37,27 +40,49 @@ const loadCharacter = () => {
           }
         }
       }
-
+      
       // headbone
       if (object.name === 'DEF-spine006') {
         characterHeadbone = object
       }
+
+      
     })
     
-    // console.log(character)
+   
+    // blink animation
+    const blinkClip = THREE.AnimationClip.findByName(characterClips, 'Blink')
+    const blinkAction = mixer.clipAction(blinkClip)
+    blinkAction.loop = LoopOnce
+    setInterval(() => {
+      blinkAction.reset()
+      blinkAction.play()
+    }, Math.random() * 8000 + 1000);
     
+    // breath animation
+    const breathClip = THREE.AnimationClip.findByName(characterClips, 'Breath')
+    const breathAction = mixer.clipAction(breathClip)
+    breathAction.play()
+
+    const update = () =>
+    { 
+      mixer.update(deltaTime)
+      window.requestAnimationFrame(update)
+    }
+    update()
   })
 }
 
 const addToonMaterial = (object) => {
+  
   const oldMaterialTexture = object.material.map
-  const toonMaterial = object.material = new THREE.MeshToonMaterial({
-    map: oldMaterialTexture
-  })
+  // const toonMaterial = customToonMaterial
+  const toonMaterial = new THREE.MeshToonMaterial()
+  toonMaterial.map = oldMaterialTexture
   toonMaterial.skinning = true
   toonMaterial.morphTargets = true
-  // toonMaterial.morphNormals = true
-  console.log(toonMaterial)
+  object.material = toonMaterial
+  // console.log(toonMaterial)
 }
 
 // const addOutline = (object) => {

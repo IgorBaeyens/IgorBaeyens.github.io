@@ -3,7 +3,8 @@ import './style.css'
 import * as THREE from 'three'
 import { gui, canvas, scene, sizes, clock, renderer } from './modules/setup'
 import { character, characterHeadbone, loadCharacter } from './modules/logicCharacter'
-import { loadCamera } from './modules/logicCamera'
+import { loadCamera, raycastHitPosition } from './modules/logicCamera'
+import { loadScreen } from './modules/logicScreen'
 
 // Lights
 const light = new THREE.DirectionalLight(0xffffff, 1)
@@ -16,11 +17,18 @@ loadCamera()
 // character
 loadCharacter()
 
-// renderer
+loadScreen()
 
 
 const start = () => {
   light.target = characterHeadbone
+  
+  const update = () =>
+  { 
+    characterHeadbone.lookAt(raycastHitPosition)
+    window.requestAnimationFrame(update)
+  }
+  update()
 }
 
 export { start }
