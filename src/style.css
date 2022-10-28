@@ -18,3 +18,11 @@ body
     left: 0;
     outline: none;
 }
+
+#threeJs-background 
+{
+    position: absolute;
+    background: radial-gradient( rgba(77,61,37,1) 5%, #0D0E14 70%);
+    width: 100%;
+    height: 100%;
+}

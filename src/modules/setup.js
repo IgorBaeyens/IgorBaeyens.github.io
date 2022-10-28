@@ -25,11 +25,12 @@ const sizes = {
 // renderer
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
+  alpha: true,
   antialias:true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.setClearColor(0xffffff, 1)
+renderer.setClearColor(0xffffff, 0)
 renderer.outputEncoding = THREE.sRGBEncoding
 
 export { gui, canvas, scene, sizes, clock, deltaTime, renderer }
