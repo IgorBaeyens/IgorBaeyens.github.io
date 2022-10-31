@@ -2,10 +2,12 @@
 import * as THREE from 'three'
 import { loadGLTF } from "./loaders"
 
+let hoverScreen
+
 const loadScreen = () => {
   loadGLTF('screen.glb').then(gltf => {
-
+    hoverScreen = gltf.scene
   })
 }
 
-export { loadScreen }
+export { loadScreen, hoverScreen }

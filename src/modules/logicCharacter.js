@@ -8,8 +8,6 @@ import { raycastHitPosition } from './logicCamera'
 import { clock, deltaTime, scene } from './setup'
 
 let character
-
-
 let lookAtBones = []
 
 const outlineMaterial = new THREE.MeshBasicMaterial({
@@ -25,7 +23,7 @@ const loadCharacter = () => {
     const characterClips = gltf.animations
 
     gltf.scene.traverse(object => {
-      // if material name equals these, add toon material
+      // if material name equals this, add toon material
       if(object.type == 'SkinnedMesh') {
         switch (object.material.name) {
           case 'body': 

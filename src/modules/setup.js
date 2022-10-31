@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import * as dat from 'dat.gui'
 
 // Debug
-const gui = new dat.GUI()
+// const gui = new dat.GUI()
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 // Scene
@@ -33,4 +33,4 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setClearColor(0xffffff, 0)
 renderer.outputEncoding = THREE.sRGBEncoding
 
-export { gui, canvas, scene, sizes, clock, deltaTime, renderer }
+export { canvas, scene, sizes, clock, deltaTime, renderer }

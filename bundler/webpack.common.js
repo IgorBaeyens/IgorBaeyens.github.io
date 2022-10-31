@@ -31,7 +31,10 @@ module.exports = {
             // HTML
             {
                 test: /\.(html)$/,
-                use: ['html-loader']
+                use: 
+                [
+                    'html-loader'
+                ]
             },
 
             // JS
@@ -57,16 +60,20 @@ module.exports = {
             // Images
             {
                 test: /\.(jpg|png|gif|svg)$/,
-                use:
-                [
-                    {
-                        loader: 'file-loader',
-                        options:
-                        {
-                            outputPath: 'assets/images/'
-                        }
-                    }
-                ]
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name]-[hash][ext]'
+                }
+                // use:
+                // [
+                //     {
+                //         loader: 'file-loader',
+                //         options:
+                //         {
+                //             outputPath: 'assets/images/',
+                //         }
+                //     }
+                // ]
             },
 
             // Fonts

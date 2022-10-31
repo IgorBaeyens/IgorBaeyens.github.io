@@ -9,7 +9,7 @@ import { loadScreen } from './modules/logicScreen'
 
 // Lights
 const light = new THREE.DirectionalLight(0xffffff, 1)
-light.position.set(4, 4, 10)
+light.position.set(-4, 4, 10)
 scene.add(light)
 
 
@@ -30,18 +30,21 @@ const update = () =>
   window.requestAnimationFrame(update)
 }
 
-
-
-
 const handleLookAtBones = () => {
   lookAtBones.forEach((bone) => {
     let easeDuration
+    let lookAtOffset
 
-    if(bone.name === 'DEF-spine006') easeDuration = 0.2
-    else easeDuration = 0.05
+    if(bone.name === 'DEF-spine006') {
+      easeDuration = 0.2
+      lookAtOffset = new THREE.Vector3(0, -0.05, 0)
+    } else  {
+      easeDuration = 0.05
+      lookAtOffset = new THREE.Vector3(0, 0, 0)
+    }
 
     const startRotation = bone.quaternion.clone()
-    bone.lookAt(raycastHitPosition)
+    if (raycastHitPosition) bone.lookAt(raycastHitPosition.add(lookAtOffset))
     const targetRotation = bone.quaternion.clone()
     bone.quaternion.copy(startRotation)
 
