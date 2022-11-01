@@ -4,9 +4,8 @@ import { scene, renderer, sizes } from './setup'
 import { loadGLTF } from "./loaders"
 import { hoverScreen } from './logicScreen'
 
-let blenderCamera, raycastHitPosition
+let blenderCamera
 let smallScreen = false
-const raycaster = new THREE.Raycaster()
 const pointer = new THREE.Vector2()
 
 const loadCamera = () => {
@@ -22,12 +21,6 @@ const loadCamera = () => {
     const update = () =>
     { 
       renderer.render(scene, blenderCamera)
-      raycaster.setFromCamera(pointer, blenderCamera)
-
-      // get raycast hit position
-      let intersect
-      if(hoverScreen) intersect = raycaster.intersectObject(hoverScreen, true)
-      if(intersect) raycastHitPosition = intersect[0].point
 
       // set camera offset
       if (sizes.width <= 1000 && smallScreen == false) {
@@ -48,8 +41,6 @@ const updatePointerPose = (event) => {
   const rect = renderer.domElement.getBoundingClientRect()
   pointer.x = ((event.clientX - rect.left) / (rect.width - rect.left)) * 2 - 1
   pointer.y = -((event.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1
-  
-
 }
 window.addEventListener('pointermove', updatePointerPose)
 
@@ -66,8 +57,7 @@ const handleWindowResize = () => {
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    
   })
 }
 
-export { loadCamera, raycastHitPosition }
+export { loadCamera, blenderCamera, pointer }

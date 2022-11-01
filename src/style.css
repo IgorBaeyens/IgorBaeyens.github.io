@@ -32,7 +32,7 @@
 
 :root {
     --extraLarge: 80px;
-    --extraLargePhone: 60px;
+    --extraLargePhone: 50px;
     --styleBlue: #46D0EE;
     --styleYellow: #FAC96B;
     --styleBlack: #0D0E14;
@@ -65,7 +65,12 @@ body
     height: 100vh;
     color: white;
     /* !important! */
+    user-select: none;
     touch-action: none;
+}
+
+input[type="radio"] {
+    display: none;
 }
 
 .webgl
@@ -73,7 +78,8 @@ body
     position: fixed;
     top: 0;
     left: 0;
-    outline: none;
+    /* outline: none; */
+    /* display: none; */
 }
 
 #threeJs-background 
@@ -84,37 +90,67 @@ body
     height: 100%;
 }
 
-#header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 90px;
-}
-
-#expressions img {
-    width: 50px;
-    height: 50px;
-}
-
 #home-screen {
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
+#grid {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    width:90%;
+    padding: 0px 5%;
+    /* padding: 0px 70px; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 90px auto 90px;
+    grid-template-areas: 
+        "headerLeft headerRight"
+        ". ."
+        "footer footer"
+    ;
+}
+
+#menu-button {
+    display: none;
+    justify-self: right;
+    z-index: 10;
+}
+
+#expressions {
+    display: flex;
+    justify-self: right;
+}
+#expressions label {
+    display: flex;
+    margin-left: 10px;
+    border-radius: 100%;
+}
+#expressions img {
+    border-radius: 100%;
+    margin: -1px;
+}
+#expressions input[type="radio"]:checked + label {
+    transition: 0.2s;
+    box-shadow: 0px 0px 7px 3px var(--styleBlue);
+}
+
 #home-menu {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: max-content;
+    /* width: max-content; */
     left: 20%;
     top: 50%;
     transform: translate(0, -50%)
-     
 }
 #home-menu h1 {
     display: inline-block;
     font-size: var(--extraLarge);
-    margin: 10px 0px;
+    /* margin: 10px 0px; */
+    margin: 2% 0px;
     
 }
 #home-menu div {
@@ -143,7 +179,6 @@ body
 
 .interact {
     cursor: pointer;
-    user-select: none;
     transition: 0.2s;
     
 }
@@ -155,13 +190,22 @@ body
 
 @media (hover: hover) and (pointer: fine) {
     .__scale:hover {
-        transform: scale(1.2);
+        transform: scale(1.2); /*1.2*/
         transition: 0.2s;
     }
 }
 
 @media screen and (max-width: 1000px) {
-   #home-menu {
+    #menu-button {
+        display: block;
+    }
+
+    #expressions {
+        grid-area: footer;
+        justify-self: center;
+    }
+
+    #home-menu {
         display: none;
         width: 100%;
         height: 100%;
@@ -170,10 +214,10 @@ body
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.712);
-   } 
-   #home-menu h1 {
-        font-size: var(--extraLargePhone);
-   }
+    } 
+    #home-menu h1 {
+         font-size: var(--extraLargePhone);
+    }
 
 }
 

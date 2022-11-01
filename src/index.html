@@ -10,18 +10,28 @@
     
     <div id="threeJs-background"></div>
     <canvas class="webgl"></canvas>
-    <div id="home-screen">
-        <div id="header">
-            <div id="logo-container">
-
-            </div>
-            <div id="expressions">
-                <img src="../static/assets/images/emoji_happy.png" alt="">
-                <img src="../static/assets/images/emoji_neutral.svg" alt="">
-                <img src="../static/assets/images/emoji_sad.svg" alt="">
-                <img src="../static/assets/images/emoji_angry.svg" alt="">
-            </div>
+    <div id="grid">
+        <div id="logo-container">
+            
         </div>
+        <div id="menu-button">
+            <img class="interact" src="../static/assets/images/menu.svg" alt="">
+        </div>
+        <div id="expressions">
+            <input type="radio" id="happy" name="expression" value="happy">
+            <label for="happy" class="interact __scale"><img src="../static/assets/images/emoji_happy.svg" alt=""></label>
+            <input type="radio" id="neutral" name="expression" value="neutral" checked>
+            <label for="neutral" class="interact __scale"><img src="../static/assets/images/emoji_neutral.svg" alt=""></label>
+            <input type="radio" id="sad" name="expression" value="sad">
+            <label for="sad" class="interact __scale"><img src="../static/assets/images/emoji_sad.svg" alt=""></label>
+            <input type="radio" id="angry" name="expression" value="angry">
+            <label for="angry" class="interact __scale __pulse"><img src="../static/assets/images/emoji_angry.svg" alt=""></label>
+            <input type="radio" id="smug" name="expression" value="smug">
+            <label for="smug" class="interact __scale __pulse"><img src="../static/assets/images/emoji_smug.svg" alt=""></label>
+        </div>
+    </div>
+    <div id="home-screen">
+        
         
         <div id="home-menu">
             <div class="float-anim"><h1 class="interact __scale __pulse">Info & Prices</h1></div>

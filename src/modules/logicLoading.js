@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { start } from '../script'
 
 const loadingManager = new THREE.LoadingManager()
+let pageLoaded = false
 
 loadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
   const percentage = (itemsLoaded * itemsTotal) / 100
@@ -11,7 +12,8 @@ loadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
 
 loadingManager.onLoad = () => {
   console.log("Finished loading!")
+  pageLoaded = true
   setTimeout(() => start(), 100)
 }
 
-export { loadingManager }
+export { loadingManager, pageLoaded }

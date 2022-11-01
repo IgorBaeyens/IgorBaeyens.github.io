@@ -4,8 +4,9 @@ import * as THREE from 'three'
 import gsap from 'gsap'
 import { scene } from './modules/setup'
 import { loadCharacter, lookAtBones } from './modules/logicCharacter'
-import { loadCamera, raycastHitPosition } from './modules/logicCamera'
-import { loadScreen } from './modules/logicScreen'
+import { loadCamera } from './modules/logicCamera'
+import { loadScreen, raycastHitPosition } from './modules/logicScreen'
+import { manupilateDom } from './modules/domManipulation'
 
 // Lights
 const light = new THREE.DirectionalLight(0xffffff, 1)
@@ -16,6 +17,8 @@ scene.add(light)
 loadCamera()
 loadCharacter()
 loadScreen()
+
+manupilateDom()
 
 const start = () => {
   light.target = lookAtBones[0]
