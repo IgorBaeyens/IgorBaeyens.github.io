@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import * as THREE from 'three'
+import { webgl } from './domManipulation'
 import { loadGLTF } from "./loaders"
 import { blenderCamera, pointer } from './logicCamera'
 import { pageLoaded } from './logicLoading'
@@ -16,13 +17,16 @@ const loadScreen = () => {
     const update = () =>
     { 
       raycaster.setFromCamera(pointer, blenderCamera)
-
-      // get raycast hit position
-      if (pageLoaded) {
-        intersect = raycaster.intersectObject(hoverScreen, true)
-        raycastHitPosition = intersect[0].point
-      }
       
+      // get raycast hit position
+      if (pageLoaded && webgl.style.display == 'block') {
+        intersect = raycaster.intersectObject(hoverScreen, true)
+        if(intersect[0]) raycastHitPosition = intersect[0].point
+      } else {
+        raycastHitPosition = undefined
+      }
+
+
 
       window.requestAnimationFrame(update)
     }
