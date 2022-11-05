@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/assets/images/logo_icon_white.svg" />
     <link rel="stylesheet" href="style.css">
-    <title>Zel .Kanis</title>
+    <title>Zel Kanis</title>
 </head>
 <body>
     
@@ -12,6 +13,9 @@
     <canvas id="webgl"></canvas>
     <div id="home-screen">
         <div id="top" class="grid">
+            <div id="logo-container">
+                <img id="logo" class="interact __scale" src="../static/assets/images/logo_white.svg" height="60px"  alt="">
+            </div>
             <div id="expressions">
                 <input type="radio" id="happy" name="expression" value="happy">
                 <label for="happy" class="interact __scale"><img src="../static/assets/images/emoji_happy.svg" alt=""></label>
@@ -43,56 +47,24 @@
     </div>
     <div id="info-screen">
         <div id="header" class="grid">
-            <div id="logo-container">
-                
-            </div>
+            <!-- <div id="logo-container">
+                <img id="logo" class="interact __scale" src="../static/assets/images/logo_white.svg" height="60px"  alt="">
+            </div> -->
             <div id="header-menu">
                 <input type="radio" id="info-and-prices" name="menu" value="info & prices">
-                <label for="info-and-prices" class="interact"><p>Info & Prices</p></label>
-                <input type="radio" id="portfolio" name="menu" value="portfolio" checked>
-                <label for="portfolio" class="interact"><p>Portfolio</p></label>
+                <label for="info-and-prices" class="interact __scale"><p>Info & Prices</p></label>
+                <input type="radio" id="portfolio" name="menu" value="portfolio">
+                <label for="portfolio" class="interact __scale"><p>Portfolio</p></label>
                 <input type="radio" id="about" name="menu" value="about">
-                <label for="about" class="interact"><p>About</p></label>
+                <label for="about" class="interact __scale"><p>About</p></label>
                 <input type="radio" id="tos" name="menu" value="tos">
-                <label for="tos" class="interact"><p>TOS</p></label>
+                <label for="tos" class="interact __scale"><p>TOS</p></label>
                 <input type="radio" id="faq" name="menu" value="faq">
-                <label for="faq" class="interact"><p>FAQ</p></label>
+                <label for="faq" class="interact __scale"><p>FAQ</p></label>
             </div>
         </div>
         <div id="info-screen_text">
-            <h1>Prices</h1>
-            <p>The starting price for a commission is 750 EU. This includes:</p>
-            <ul>
-                <li>character in VRM format for use as a Vtuber</li>
-                <li>character in FBX format as a normal 3D model</li>
-                <li>character base model (SFW version of character without clothes) in FBX format</li>
-                <li>The blender file and textures</li>
-                <li>5 expressions (neutral, happy, angry, sad, smug)</li>
-                <li>spring bones used for physics (used to move hair, ears, clothing or tails)</li>
-            </ul>
-            <br><br>   
-            <p>It’s also possible to ask for the following things:</p>
-            <ul>
-                <li>extra toggleable accessories  (glasses, hat, jacket, ...) for 30 EU each</li>
-                <li>extra expressions for 20 EU each</li>
-                <li>extra outfits for 300 EU each</li>
-            </ul>
-            <br><br><br>
-            <h1>Info</h1>
-            <p><b>Commissiong proces</b></p>
-            <p>Commissioning me happens through my Google Form</p>
-            <br><br>
-            <p><b>My work proces</b></p>
-            <p>Everything will be done by me in a period of 1 to 2 months. This means modeling the character, UV unwrapping it which allows for the texturing of the character, then texturing itself which is giving the character color, rigging the character so it can move, shape keys for the expressions and finally converting the character so it can be used as a Vtuber model.</p>
-            <br><br>
-            <p>I will send updates when I finish:</p>
-            <ul>
-                <li>modelling the base</li>
-                <li>modelling the outfit and hair</li>
-                <li>texturing</li>
-                <li>the expressions</li>
-                <li>converting to vrm</li>
-            </ul>
+
         </div>
     </div>
 </body>
