@@ -8,6 +8,7 @@ import { loadCamera } from './modules/logicCamera'
 import { loadScreen, raycastHitPosition } from './modules/logicScreen'
 import { manupilateDom } from './modules/domManipulation'
 
+
 // Lights
 const light = new THREE.DirectionalLight(0xffffff, 1)
 light.position.set(-4, 4, 10)
@@ -17,6 +18,15 @@ scene.add(light)
 loadCamera()
 loadCharacter()
 loadScreen()
+
+// eslint-disable-next-line no-undef
+particlesJS.load('particles-js_left', 'assets/particles/particlesjs-config.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+// eslint-disable-next-line no-undef
+particlesJS.load('particles-js_right', 'assets/particles/particlesjs-config.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 
 manupilateDom()
 

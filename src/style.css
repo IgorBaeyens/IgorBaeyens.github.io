@@ -34,7 +34,7 @@
     --extraLarge: 80px;
     --extraLargePhone: 50px;
     --large: 30px;
-    --small: 22px;
+    --small: 20px;
     --smallPhone: 16px;
     --styleBlue: #46D0EE;
     --styleYellow: #FAC96B;
@@ -55,7 +55,7 @@ h1 {
     font-size: var(--large);
 }
 
-p, li {
+p, li, button {
     font-family: 'Jura';
     font-size: var(--small);
     letter-spacing: 0.5px;
@@ -87,11 +87,12 @@ mark {
 html,
 body
 {
+    overflow-x: hidden;
     height: 100vh;
     color: white;
     /* !important! */
     user-select: none;
-    touch-action: none;
+    /* touch-action: none; */
 }
 
 input[type="radio"] {
@@ -100,6 +101,7 @@ input[type="radio"] {
 
 #webgl
 {
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -111,6 +113,19 @@ input[type="radio"] {
     background: radial-gradient( rgba(77,61,37,1) 5%, #0D0E14 70%);
     width: 100%;
     height: 100%;
+}
+
+.particles {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+#particles-js_right {
+    right: 0;
+    transform: rotate(180deg);
 }
 
 #home-screen {
@@ -226,7 +241,7 @@ input[type="radio"] {
     position: absolute;
     width: 100%;
     height: auto;
-    /* height: 180%; */
+    padding-bottom: 50%;
     background-color: var(--styleBlack);
 }
 
@@ -253,12 +268,25 @@ width: 50%;
 
 #info-screen_right {
     position: relative;
+
 }
 
 #zel_gif {
     position: absolute;
     width: 600px;
     top: -100px;
+
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    /* background-color: #fac86bad; */
+    background: none;
+    transition: 0.05s;
+    border: #FAC96B 1px solid;
+    color: white;
 }
 
 .interact {
@@ -275,6 +303,11 @@ width: 50%;
     .__scale:hover {
         transform: scale(1.2);
         transition: 0.2s;
+    }
+
+    .button:hover {
+        transition: 0.05s;
+        border: #FAC96B 3px solid;
     }
 }
 
@@ -317,6 +350,11 @@ width: 50%;
     }
 
     #info-screen_left {
+        width: 100%;
+    }
+
+    #zel_gif {
+        position: static;
         width: 100%;
     }
 }

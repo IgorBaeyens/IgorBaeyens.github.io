@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <title>Zel Kanis</title>
 </head>
-<body>
-    
-    <div id="threeJs-background"></div>
+<body id="body">
+    <div id="threeJs-background">
+        <div id="particles-js_left" class="particles"></div>
+        <div id="particles-js_right" class="particles"></div>
+    </div>
+
     <canvas id="webgl"></canvas>
+
     <div id="home-screen">
         <div id="top" class="grid">
             <div id="logo-container">
                 <img id="logo" class="interact __scale" src="../static/assets/images/logo_white.svg" height="60px"  alt="">
             </div>
+
             <div id="expressions">
                 <input type="radio" id="happy" name="expression" value="happy">
                 <label for="happy" class="interact __scale"><img src="../static/assets/images/emoji_happy.svg" alt=""></label>
@@ -28,6 +33,7 @@
                 <input type="radio" id="smug" name="expression" value="smug">
                 <label for="smug" class="interact __scale __pulse"><img src="../static/assets/images/emoji_smug.svg" alt=""></label>
             </div>
+
             <div id="menu-button">
                 <img class="interact" src="../static/assets/images/menu.svg" alt="">
             </div>
@@ -45,11 +51,9 @@
             <div class="float-anim"><h1 class="interact __scale __pulse">FAQ</h1></div>
         </div>
     </div>
+
     <div id="info-screen">
         <div id="header" class="grid">
-            <!-- <div id="logo-container">
-                <img id="logo" class="interact __scale" src="../static/assets/images/logo_white.svg" height="60px"  alt="">
-            </div> -->
             <div id="header-menu">
                 <input type="radio" id="info-and-prices" name="menu" value="info & prices">
                 <label for="info-and-prices" class="interact __scale"><p>Info & Prices</p></label>
@@ -63,9 +67,12 @@
                 <label for="faq" class="interact __scale"><p>FAQ</p></label>
             </div>
         </div>
+
         <div id="info-screen_text">
 
         </div>
     </div>
+
+    <script src="./modules/particles.js"></script>
 </body>
 </html>

@@ -4,6 +4,9 @@ import { text } from "./content"
 import { elementFade, textTransition } from "./helpers"
 import { sizes } from "./setup"
 
+let body = document.getElementById('body')
+let threeJsBackground = document.getElementById('threeJs-background')
+let particles = document.getElementsByClassName('particles')
 let webgl = document.getElementById('webgl')
 let logo = document.getElementById('logo')
 let menuButton = document.getElementById('menu-button')
@@ -18,6 +21,8 @@ let menuActive = false
 let clickedMenuItem = ""
 
 const manupilateDom = () => {
+    body.style.touchAction = 'none'
+    threeJsBackground.style.display = 'initial'
     webgl.style.display = 'block'
     infoScreen.style.display = 'none'
     infoScreen.style.opacity = 0
@@ -41,17 +46,28 @@ const windowEdits = () => {
         homeMenu.style.display = 'flex'
         homeMenu.style.opacity = 1
         menuActive = true
+        if (clickedMenuItem.toLowerCase() == 'portfolio') infoScreenText.style.flexDirection = 'row'
     } else {
         expressionsBottom.appendChild(expressions)
         homeMenu.style.display = 'none'
         homeMenu.style.opacity = 0
         menuActive = false
+        if (clickedMenuItem.toLowerCase() == 'portfolio') infoScreenText.style.flexDirection = 'column'
     }
 }
 
 const backToHomeLogic = () => {
     logo.addEventListener('click', () => {
+        body.style.touchAction = 'none'
+        // threeJsBackground.style.display = 'initial'
+        elementFade(particles[0], 'fadeIn')
+        elementFade(particles[1], 'fadeIn')
         webgl.style.display = 'block'
+        if (window.innerWidth > 1000) {
+            elementFade(homeMenu, 'fadeIn')
+            menuActive = true
+        }
+
         // infoScreen.style.display = 'none'
         elementFade(infoScreen, 'fadeOut')
     })
@@ -65,6 +81,9 @@ const menuLogic = () => {
     for (let i = 0; i < homeMenu.children.length; i++) {
         let menuItem = homeMenu.children[i].children[0]
         menuItem.addEventListener('click', event => {
+            body.style.touchAction = 'auto'
+            elementFade(particles[0], 'fadeOut')
+            elementFade(particles[1], 'fadeOut')
             elementFade(homeMenu, 'fadeOut')
             menuActive = false
             clickedMenuItem = event.target.innerText
@@ -76,12 +95,15 @@ const menuLogic = () => {
     }
 }
 const changeMenu = () => {
+    let displayStyle
     switch (clickedMenuItem.toLowerCase()) {
         case 'info & prices':
             textTransition(infoScreenText, text.infoAndPrices, 'column')
         break;
         case 'portfolio':
-            textTransition(infoScreenText, text.portfolio, 'row')
+            if (window.innerWidth > 1000) displayStyle = 'row'
+            else displayStyle = 'column'
+            textTransition(infoScreenText, text.portfolio, displayStyle)
         break;
         case 'about':
             textTransition(infoScreenText, text.about, 'column')

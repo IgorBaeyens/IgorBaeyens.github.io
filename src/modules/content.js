@@ -62,7 +62,7 @@ const text = {
              case the price of a revision depends on which part of the character you want revised.
         </p>
         <br><br>
-        <button>Commission me</button>
+        <button id="button_commission" class="button interact">Commission me</button>
     `,
     portfolio: `
         <div id="info-screen_left">
