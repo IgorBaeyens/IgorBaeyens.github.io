@@ -133,6 +133,15 @@ const text = {
     faq: `
         <h1>Frequently Asked Questions</h1>
         <p>empty for now</p>
+        <br>
+        <ul>
+            <li>-</li><br>
+            <li>-</li><br>
+            <li>-</li><br>
+            <li>-</li><br>
+            <li>-</li><br>
+            <li>-</li><br>
+        </ul>
     `
 }
 
