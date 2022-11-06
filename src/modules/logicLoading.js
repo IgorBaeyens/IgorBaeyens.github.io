@@ -13,7 +13,7 @@ loadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
 loadingManager.onLoad = () => {
   console.log("Finished loading!")
   pageLoaded = true
-  setTimeout(() => start(), 100)
+  // setTimeout(() => start(), 100)
 }
 
 export { loadingManager, pageLoaded }

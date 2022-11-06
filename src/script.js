@@ -7,6 +7,7 @@ import { loadCharacter, lookAtBones } from './modules/logicCharacter'
 import { loadCamera } from './modules/logicCamera'
 import { loadScreen, raycastHitPosition } from './modules/logicScreen'
 import { manupilateDom } from './modules/domManipulation'
+import { pageLoaded } from './modules/logicLoading'
 
 
 // Lights
@@ -19,30 +20,34 @@ loadCamera()
 loadCharacter()
 loadScreen()
 
-// eslint-disable-next-line no-undef
+
 particlesJS.load('particles-js_left', 'assets/particles/particlesjs-config.json', function() {
   console.log('callback - particles.js config loaded');
 });
-// eslint-disable-next-line no-undef
+
 particlesJS.load('particles-js_right', 'assets/particles/particlesjs-config.json', function() {
   console.log('callback - particles.js config loaded');
 });
 
 manupilateDom()
 
+let started = false
 const start = () => {
   light.target = lookAtBones[0]
-  
-  update()
+  started = true
 }
+
 
 const update = () =>
 { 
-  handleLookAtBones()
+  if(pageLoaded) {
+    if(!started) start()
+    handleLookAtBones()
+  }
 
   window.requestAnimationFrame(update)
 }
-
+update()
 const handleLookAtBones = () => {
   lookAtBones.forEach((bone) => {
     let easeDuration
