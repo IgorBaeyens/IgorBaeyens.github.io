@@ -4,7 +4,8 @@
   "main": "src/script.js",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
-    "dev": "webpack serve --config ./bundler/webpack.dev.js"
+    "dev": "webpack serve --config ./bundler/webpack.dev.js",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@babel/core": "^7.13.1",
@@ -18,6 +19,7 @@
     "extend-material": "^1.0.0",
     "file-loader": "^6.2.0",
     "fs": "0.0.1-security",
+    "gh-pages": "^4.0.0",
     "gsap": "^3.11.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.2.0",
