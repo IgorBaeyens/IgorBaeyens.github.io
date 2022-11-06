@@ -22,7 +22,7 @@ let clickedMenuItem = ""
 
 const manupilateDom = () => {
     body.style.touchAction = 'none'
-    threeJsBackground.style.display = 'initial'
+    // threeJsBackground.style.display = 'initial'
     webgl.style.display = 'block'
     infoScreen.style.display = 'none'
     infoScreen.style.opacity = 0
@@ -59,7 +59,6 @@ const windowEdits = () => {
 const backToHomeLogic = () => {
     logo.addEventListener('click', () => {
         body.style.touchAction = 'none'
-        // threeJsBackground.style.display = 'initial'
         elementFade(particles[0], 'fadeIn')
         elementFade(particles[1], 'fadeIn')
         webgl.style.display = 'block'
@@ -67,8 +66,6 @@ const backToHomeLogic = () => {
             elementFade(homeMenu, 'fadeIn')
             menuActive = true
         }
-
-        // infoScreen.style.display = 'none'
         elementFade(infoScreen, 'fadeOut')
     })
 }
@@ -88,7 +85,6 @@ const menuLogic = () => {
             menuActive = false
             clickedMenuItem = event.target.innerText
             webgl.style.display = 'none'
-            // infoScreen.style.display = 'flex'
             elementFade(infoScreen, 'fadeIn')
             changeMenu()
         })
@@ -123,11 +119,9 @@ const menuButtonLogic = () => {
     menuButton.addEventListener('click', () => { 
         if (menuActive) {
             elementFade(homeMenu, 'fadeOut')
-            // homeMenu.style.display = 'none'
             menuActive = false
         } else if (!menuActive) {
             elementFade(homeMenu, 'fadeIn')
-            // homeMenu.style.display = 'flex'
             menuActive = true
         }
     })

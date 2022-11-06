@@ -5,6 +5,14 @@ const prices = {
     outfit: "<mark>300 EU</mark>"
 }
 
+const termPeriods = {
+    commPeriodDays: "62",
+    commPeriodMonths: "2",
+    revealDelayPeriod: "62",
+    refundPeriodDays: "21"
+
+}
+
 const text = {
     infoAndPrices: `
         <h1>Prices</h1>
@@ -21,10 +29,11 @@ const text = {
         <br><br>   
         <p>It’s also possible to ask for the following things:</p>
         <ul>
-            <li>extra toggleable accessories  (glasses, hat, jacket, ...) for ${prices.accessory} each</li>
+            <li>extra toggleable accessories  (glasses, hat, ...) for ${prices.accessory} each</li>
             <li>extra expressions for ${prices.expression} each</li>
             <li>extra outfits for ${prices.outfit} each</li>
         </ul>
+        <p>Be sure to add more references if you want to add something extra. Otherwise i cannot accurately create what you mant me to.</p>
         <br><br><br>
         <h1>Info</h1>
         <p><b>Commissioning process</b></p>
@@ -62,7 +71,7 @@ const text = {
              case the price of a revision depends on which part of the character you want revised.
         </p>
         <br><br>
-        <button id="button_commission" class="button interact">Commission me</button>
+        <a href="https://forms.gle/ZyPk4XVTiTTNDV1U8" target="_blank"><button id="button_commission" class="button interact">Commission Zel</button></a>
     `,
     portfolio: `
         <div id="info-screen_left">
@@ -94,29 +103,30 @@ const text = {
         <br>
         <p><b>General</b></p>
         <Ul>
-            <li>a commission is finished when the client has received a zip file containing a vrm file of the character, an fbx file of the character, an fbx file of the base model, a blender file and a folder with textures of the character</li>
-            <li>a commission can take up to 2 months time (62 days)</li>
-            <li>I will send updates after completing following stages of the commission: modelling the base, modelling the outfit and hair, texturing the character, creating all of the expressions and converting the character to vrm format </li>
-            <li>re-selling of the commission files or it’s contents is not allowed by either me or the client</li>
-            <li>after the commission is finished i am allowed to post the result on social media and my portfolio., unless the client specifies through the Google Form they want me to wait until they themselves reveal the 3D model.
+            <li><mark>a commission is finished when</mark> the client has seen that the product works as advertised and has received a zip file containing a vrm file of the character, an fbx file of the character, an fbx file of the base model, a blender file and a folder with textures of the character</li>
+            <li>a commission can take up to <mark>${termPeriods.commPeriodMonths} months</mark> time (<mark>${termPeriods.commPeriodDays} days</mark>)</li>
+            <li>I will send <mark>updates</mark> after completing following stages of the commission: modelling the base, modelling the outfit and hair, texturing the character, creating all of the expressions and converting the character to vrm format </li>
+            <li>there is no set limit on <mark>revisions</mark>. However, i do not see big changes that deviate from the originally given reference as a revision</li>
+            <li><mark>re-selling</mark> of the commission files or it’s contents is not allowed by either me or the client</li>
+            <li>after the commission is finished <mark>i am allowed to post the result</mark> on social media and my portfolio., <mark>unless</mark> the client specifies through the Google Form they want me to wait until they themselves reveal the 3D model.
                 <br><br>
-                If the client wants me to wait they get another 62 day period to reveal the model after the commission is finished. When this period ends or the client has revealed the 3D model, I am allowed to post the result on social media and my portfolio
+                If the client wants me to wait they get <mark>another ${termPeriods.revealDelayPeriod} day period</mark> to reveal the model after the commission is finished. When this period ends or the client has revealed the 3D model, I am allowed to post the result on social media and my portfolio
             </li>
         </Ul>
         <br><br>
         <p><b>Payment</b></p>
         <ul>
-            <li>payment is through Paypal invoice</li>
+            <li>payment is through <mark>Paypal invoice</mark></li>
             <li>50% of the payment will be paid upfront</li>
             <li>the final files will be given to the client after they paid the other 50%</li>
         </ul>
         <br><br>
         <p><b>Refunding</b></p>
         <ul>
-            <li>if I cancel the commission the client will be fully refunded</li>
-            <li>if the 62 day period has passed and the commission is not finished the client will be fully refunded</li>
-            <li>if the client cancels within 21 days of accepting the commission they will be fully refunded minus the Paypal fee amount (usually around 3%)</li>
-            <li>if the client cancels after the 21 day period they will not be refunded</li>
+            <li>if <mark>I cancel the commission</mark> the client will be fully refunded</li>
+            <li>if <mark>I do not finish the commission</mark> in the ${termPeriods.commPeriodDays} day commission deadline the client will be fully refunded</li>
+            <li>if the <mark>client cancels within ${termPeriods.refundPeriodDays} days</mark> of accepting the commission they will be fully refunded minus the Paypal fee amount (usually around 3%)</li>
+            <li>if the <mark>client cancels after the ${termPeriods.refundPeriodDays} day period</mark> they will not be refunded</li>
             <li>no refunds will be issued after the commission is finished</li>
         </ul>
     `,

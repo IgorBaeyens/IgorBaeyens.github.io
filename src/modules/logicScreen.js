@@ -26,13 +26,9 @@ const loadScreen = () => {
         raycastHitPosition = undefined
       }
 
-
-
       window.requestAnimationFrame(update)
     }
     update()
-
-    
   })
 }
 
