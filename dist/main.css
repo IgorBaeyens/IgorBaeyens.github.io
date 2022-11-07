@@ -91,6 +91,8 @@ body
     height: 100vh;
     color: white;
     /* !important! */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
     user-select: none;
     /* touch-action: none; */
 }
@@ -238,13 +240,13 @@ input[type="radio"] {
 }
 
 #info-screen {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     position: absolute;
     width: 100%;
     height: auto;
-    padding-bottom: 50%;
+    padding-bottom: 700px;
     background-color: var(--styleBlack);
 }
 
@@ -276,8 +278,8 @@ width: 50%;
 
 #zel_gif {
     position: absolute;
-    width: 600px;
-    top: -100px;
+    width: 400px;
+    top: 0px;
 
 }
 
@@ -357,8 +359,10 @@ width: 50%;
     }
 
     #zel_gif {
-        position: static;
-        width: 100%;
+        /* position: static; */
+        left: 50%;
+        transform: translate(-50%, 0);
+        /* width: 100%; */
     }
 }
 

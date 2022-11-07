@@ -16,10 +16,10 @@ const loadScreen = () => {
     
     const update = () =>
     { 
-      raycaster.setFromCamera(pointer, blenderCamera)
       
       // get raycast hit position
       if (pageLoaded && webgl.style.display == 'block') {
+        raycaster.setFromCamera(pointer, blenderCamera)
         intersect = raycaster.intersectObject(hoverScreen, true)
         if(intersect[0]) raycastHitPosition = intersect[0].point
       } else {

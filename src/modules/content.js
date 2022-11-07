@@ -80,7 +80,7 @@ const text = {
             <br><br>
             <p>Some new things i tried with Zel are the floating arms they have, their tail and the art style reminiscent of Guilty Gear. I also learned about ARkit blendshapes, which makes my characters more expressive than before.</p>
             <br><br>
-            <video src="assets/images/zel_showcase.mp4" width="100%" loop autoplay></video>
+            <!-- <video src="assets/images/zel_showcase.mp4" width="100%" loop autoplay></video> -->
         </div>
         <div id="info-screen_right">
             <img id="zel_gif" src="assets/images/rest.gif" alt="">

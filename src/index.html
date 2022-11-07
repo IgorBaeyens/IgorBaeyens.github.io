@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6JJ1HVBPJP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-6JJ1HVBPJP');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="../static/assets/images/logo_icon_white.svg" />
     <link rel="stylesheet" href="style.css">
-    <script src="./modules/particles.js"></script>
     <title>Zel Kanis</title>
+    <!-- <script src="./modules/particles.js"></script> -->
 </head>
 <body id="body">
     <div id="threeJs-background">
         <div id="particles-js_left" class="particles"></div>
         <div id="particles-js_right" class="particles"></div>
     </div>
-
+    
     <canvas id="webgl"></canvas>
-
+    
     <div id="home-screen">
         <div id="top" class="grid">
             <div id="logo-container">
                 <img id="logo" class="interact __scale" src="../static/assets/images/logo_white.svg" height="60px"  alt="">
             </div>
-
+            
             <div id="expressions">
                 <input type="radio" id="happy" name="expression" value="happy">
                 <label for="happy" class="interact __scale"><img src="../static/assets/images/emoji_happy.svg" alt=""></label>
@@ -34,7 +43,7 @@
                 <input type="radio" id="smug" name="expression" value="smug">
                 <label for="smug" class="interact __scale __pulse"><img src="../static/assets/images/emoji_smug.svg" alt=""></label>
             </div>
-
+            
             <div id="menu-button">
                 <img class="interact" src="../static/assets/images/menu.svg" alt="">
             </div>
@@ -52,7 +61,7 @@
             <div class="float-anim"><h1 class="interact __scale __pulse">FAQ</h1></div>
         </div>
     </div>
-
+    
     <div id="info-screen">
         <div id="header" class="grid">
             <div id="header-menu">
@@ -68,12 +77,12 @@
                 <label for="faq" class="interact __scale"><p>FAQ</p></label>
             </div>
         </div>
-
+        
         <div id="info-screen_text">
             
         </div>
     </div>
-
+    
     
 </body>
 </html>
