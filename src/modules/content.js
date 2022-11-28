@@ -24,6 +24,7 @@ const text = {
             <li>The blender file and textures</li>
             <li>5 expressions (neutral, happy, angry, sad, smug)</li>
             <li>52 ARkit blendshapes for expressive facial tracking </li>
+            <li>visemes for audio based facial tracking </li>
             <li>spring bones used for physics (used to move hair, ears, clothing or tails)</li>
         </ul>
         <br><br>   
@@ -33,14 +34,15 @@ const text = {
             <li>extra expressions for ${prices.expression} each</li>
             <li>extra outfits for ${prices.outfit} each</li>
         </ul>
-        <p>Be sure to add more references if you want to add something extra. Otherwise i cannot accurately create what you mant me to.</p>
+        <p>Be sure to add more references if you want me to add something extra. Otherwise i cannot accurately create what you want me to.</p>
         <br><br><br>
         <h1>Info</h1>
         <p><b>Commissioning process</b></p>
         <p>
-            Commissioning me is quite easy! I will likely have only one slot open for now, since i'm just starting out. 
+            Commissioning me is quite easy! I will likely have only one slot open for now, since I'm just starting out. 
             First you fill in my <mark>Google Form</mark> and submit it. If i choose you, you will receive a message from me, 
-            either through mail or Twitter, saying that i've accepted your commission and will begin working on it once you've sent 50% of the price amount.
+            either through mail, discord or Twitter, saying that i've accepted your commission. Shortly after you will be sent a Paypal invoice
+            and if you've payed half of the price I will begin working on your commission!
         </p>
         <br><br>
         <p><b>My work process</b></p>
@@ -48,7 +50,7 @@ const text = {
             Everything will be done by me in a period of 1 to 2 months. This means <mark>modelling</mark> the character, 
             <mark>UV unwrapping</mark> it which allows for the texturing of the character, then <mark>texturing</mark> itself which is 
             giving the character color, <mark>rigging</mark> the character so it can move, <mark>shape keys</mark> for the expressions 
-            and finally converting the character so it can be used as a Vtuber model.
+            and finally <mark>converting</mark> the character so it can be used as a Vtuber model.
         </p>
         <br><br>
         <p>I will send updates when I finish:</p>
@@ -59,6 +61,7 @@ const text = {
             <li>the expressions</li>
             <li>converting to vrm</li>
         </ul>
+        <p>After every update you can ask for revisions if you're not satisfied with something. I will send another update after the revisions are done.</p>
         <br><br>
         <p><b>Important</b></p>
         <p>
@@ -67,15 +70,14 @@ const text = {
         </p>
         <br><br>
         <p>
-            Revisions are free unless you want changes that differ from the original given reference. In that
-             case the price of a revision depends on which part of the character you want revised.
+            Please be sure to read my <mark>Terms Of Service</mark> before commissioning me.
         </p>
         <br><br>
         <a href="https://forms.gle/ZyPk4XVTiTTNDV1U8" target="_blank"><button id="button_commission" class="button interact">Commission Zel</button></a>
     `,
     portfolio: `
         <div id="info-screen_left">
-            <h1>Zel Kanis</h1>
+            <h1>Zel Kanis [persona]</h1>
             <p>Zel is my persona. I came up with the design myself hence why they aren't as detailed.</p>
             <br><br>
             <p>Some new things i tried with Zel are the floating arms they have, their tail and the art style reminiscent of Guilty Gear. I also learned about ARkit blendshapes, which makes my characters more expressive than before.</p>
@@ -88,12 +90,12 @@ const text = {
     `,
     about: `
         <h1>About me</h1>
-        <p>Hi. Name's Zel,</p>
+        <p>Hi. Zel here,</p>
         <p>an artist in heart and soul.</p>
         <br><br>
         <p>I started my 3D journey about 4 years ago, in a course for game graphics. There i mostly learned how to model objects, cars and houses. It didn’t have anything to do with characters just yet. But that’s when my love for 3D sparked. It’s a great midway between the artistic side and the technical side. fitting for someone like me.</p>
         <br><br>
-        <p>After that first year spent in a course, i had switched into a different course that didn’t have 3D but nevertheless continued to improve my skills throught self study. Which brings me at the level I am now.</p>
+        <p>After that first year spent in game graphics, I had switched into a different course that didn’t have 3D but nevertheless continued to improve my skills through self study. Which brings me at the level I am now.</p>
         <br><br>
         <p>Entertainment is my life and I’m always striving to become just as good as the artists from my favorite media.</p>
     `,
@@ -103,6 +105,7 @@ const text = {
         <br>
         <p><b>General</b></p>
         <Ul>
+            <li><mark>a commission is considered started when</mark> the client has paid 50% of the Paypal invoice price</li>
             <li><mark>a commission is finished when</mark> the client has seen that the product works as advertised and has received a zip file containing a vrm file of the character, an fbx file of the character, an fbx file of the base model, a blender file and a folder with textures of the character</li>
             <li>a commission can take up to <mark>${termPeriods.commPeriodMonths} months</mark> time (<mark>${termPeriods.commPeriodDays} days</mark>)</li>
             <li>I will send <mark>updates</mark> after completing following stages of the commission: modelling the base, modelling the outfit and hair, texturing the character, creating all of the expressions and converting the character to vrm format </li>
@@ -125,9 +128,9 @@ const text = {
         <ul>
             <li>if <mark>I cancel the commission</mark> the client will be fully refunded</li>
             <li>if <mark>I do not finish the commission</mark> in the ${termPeriods.commPeriodDays} day commission deadline the client will be fully refunded</li>
-            <li>if the <mark>client cancels within ${termPeriods.refundPeriodDays} days</mark> of accepting the commission they will be fully refunded minus the Paypal fee amount (usually around 3%)</li>
+            <li>if the <mark>client cancels within ${termPeriods.refundPeriodDays} days</mark> of starting the commission they will be fully refunded minus a cancellation fee of 5%</li>
             <li>if the <mark>client cancels after the ${termPeriods.refundPeriodDays} day period</mark> they will not be refunded</li>
-            <li>no refunds will be issued after the commission is finished</li>
+            <li>no refunds will be issued <mark>after the commission is finished</mark></li>
         </ul>
     `,
     faq: `
