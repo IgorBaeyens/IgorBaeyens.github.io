@@ -255,6 +255,7 @@ input[type="radio"] {
     flex-direction: column;
     width: 900px;
     margin-top: 100px;
+    user-select: text;
 }
 #info-screen_text h1 {
     margin-bottom: 20px;
