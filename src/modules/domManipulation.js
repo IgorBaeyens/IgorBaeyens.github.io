@@ -94,21 +94,21 @@ const changeMenu = () => {
     let displayStyle
     switch (clickedMenuItem.toLowerCase()) {
         case 'info & prices':
-            textTransition(infoScreenText, text.infoAndPrices, 'column')
+            textTransition(infoScreenText, text.infoAndPrices)
         break;
         case 'portfolio':
-            if (window.innerWidth > 1000) displayStyle = 'row'
-            else displayStyle = 'column'
-            textTransition(infoScreenText, text.portfolio, displayStyle)
+            // if (window.innerWidth > 1000) displayStyle = 'row'
+            // else displayStyle = 'column'
+            textTransition(infoScreenText, text.portfolio)
         break;
         case 'about':
-            textTransition(infoScreenText, text.about, 'column')
+            textTransition(infoScreenText, text.about)
         break;
         case 'tos':
-            textTransition(infoScreenText, text.tos, 'column')
+            textTransition(infoScreenText, text.tos)
         break;
         case 'faq':
-            textTransition(infoScreenText, text.faq, 'column')
+            textTransition(infoScreenText, text.faq)
         break;
         default:
         break;

@@ -17,12 +17,11 @@ const elementFade = (element, fadeType) => {
   }
 }
 
-const textTransition = (element, content, flexDirection) => {
+const textTransition = (element, content) => {
   let timeline = gsap.timeline()
   timeline.to(element, {opacity: 0, duration: 0.3})
   timeline.add(() => {
     element.innerHTML = content
-    element.style.flexDirection = flexDirection
   })
   timeline.to(element, {opacity: 1, duration: 0.3})
   timeline.play()

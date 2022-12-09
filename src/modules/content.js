@@ -76,16 +76,19 @@ const text = {
         <a href="https://forms.gle/ZyPk4XVTiTTNDV1U8" target="_blank"><button id="button_commission" class="button interact">Commission Zel</button></a>
     `,
     portfolio: `
-        <div id="info-screen_left">
-            <h1>Zel Kanis [persona]</h1>
-            <p>Zel is my persona. I came up with the design myself hence why they aren't as detailed.</p>
-            <br><br>
-            <p>Some new things i tried with Zel are the floating arms they have, their tail and the art style reminiscent of Guilty Gear. I also learned about ARkit blendshapes, which makes my characters more expressive than before.</p>
-            <br><br>
-            <!-- <video src="assets/images/zel_showcase.mp4" width="100%" loop autoplay></video> -->
-        </div>
-        <div id="info-screen_right">
-            <img id="zel_gif" src="assets/images/rest.gif" alt="">
+        <div id="portfolio-content">
+            <div>
+                <h1>Zel Kanis</h1>
+                <p>Persona</p>
+                <br>
+                <video src="assets/images/showcase_zel_wide_large.mp4" width="100%" type="video/mp4" loop controls></video>
+            </div>
+            <div>
+                <h1>Ninomae Ina'nis</h1>
+                <p>Fan-art</p>
+                <br>
+                <video src="assets/images/showcase_ina_wide_large.mp4" width="100%" type="video/mp4" loop controls></video>
+            </div>
         </div>
     `,
     about: `

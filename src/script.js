@@ -11,7 +11,7 @@ import { pageLoaded } from './modules/logicLoading'
 import "particles.js"
 
 
-// Lights
+// LIGHTS
 const light = new THREE.DirectionalLight(0xffffff, 1)
 light.position.set(-4, 4, 10)
 scene.add(light)
@@ -21,15 +21,17 @@ loadCamera()
 loadCharacter()
 loadScreen()
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  window.particlesJS.load('particles-js_left', 'assets/particles/particlesjs-config.json', function() {
-    console.log('callback - particles.js config loaded');
-  });
+// PARTICLES
 
-  window.particlesJS.load('particles-js_right', 'assets/particles/particlesjs-config.json', function() {
-    console.log('callback - particles.js config loaded');
-  });
-})
+// window.addEventListener('DOMContentLoaded', (event) => {
+//   window.particlesJS.load('particles-js_left', 'assets/particles/particlesjs-config.json', function() {
+//     console.log('callback - particles.js config loaded');
+//   });
+
+//   window.particlesJS.load('particles-js_right', 'assets/particles/particlesjs-config.json', function() {
+//     console.log('callback - particles.js config loaded');
+//   });
+// })
 
 
 manupilateDom()
