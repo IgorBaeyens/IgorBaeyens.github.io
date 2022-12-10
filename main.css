@@ -240,6 +240,14 @@ input[type="radio"] {
     margin-top: 40px;
 }
 
+#info-screen_background {
+    position:fixed;
+    /* IMPORTANT: IF WIDTH 100% CAUSE SCROLL LAG */
+    width: 99.9%;
+    height: 110%;
+    background-color: var(--styleBlack);
+}
+
 #info-screen {
     display: none;
     flex-direction: column;
@@ -248,7 +256,7 @@ input[type="radio"] {
     width: 100%;
     height: auto;
     padding-bottom: 700px;
-    background-color: var(--styleBlack);
+    /* background-color: var(--styleBlack); */
 }
 
 #info-screen_text {
