@@ -2,6 +2,7 @@
 import gsap from "gsap"
 import { text } from "./content"
 import { elementFade, textTransition } from "./helpers"
+import { logicVideo } from "./logicVideo"
 import { sizes } from "./setup"
 
 let body = document.getElementById('body')
@@ -15,15 +16,18 @@ let headerMenu = document.getElementById('header-menu')
 let expressions = document.getElementById('expressions')
 let expressionsTop = document.getElementById('top')
 let expressionsBottom = document.getElementById('bottom')
+let infoScreenBg = document.getElementById('info-screen_background')
 let infoScreen = document.getElementById('info-screen')
 let infoScreenText = document.getElementById('info-screen_text')
+let videos
 let menuActive = false
 let clickedMenuItem = ""
 
 const manupilateDom = () => {
     body.style.touchAction = 'none'
-    // threeJsBackground.style.display = 'initial'
     webgl.style.display = 'block'
+    infoScreenBg.style.display = 'none'
+    infoScreenBg.style.opacity = 0
     infoScreen.style.display = 'none'
     infoScreen.style.opacity = 0
     homeMenu.style.display = 'none'
@@ -46,13 +50,13 @@ const windowEdits = () => {
         homeMenu.style.display = 'flex'
         homeMenu.style.opacity = 1
         menuActive = true
-        if (clickedMenuItem.toLowerCase() == 'portfolio') infoScreenText.style.flexDirection = 'row'
+        // if (clickedMenuItem.toLowerCase() == 'portfolio') infoScreenText.style.flexDirection = 'row'
     } else {
         expressionsBottom.appendChild(expressions)
         homeMenu.style.display = 'none'
         homeMenu.style.opacity = 0
         menuActive = false
-        if (clickedMenuItem.toLowerCase() == 'portfolio') infoScreenText.style.flexDirection = 'column'
+        // if (clickedMenuItem.toLowerCase() == 'portfolio') infoScreenText.style.flexDirection = 'column'
     }
 }
 
@@ -61,11 +65,12 @@ const backToHomeLogic = () => {
         body.style.touchAction = 'none'
         elementFade(particles[0], 'fadeIn')
         elementFade(particles[1], 'fadeIn')
-        webgl.style.display = 'block'
+        // webgl.style.display = 'block'
         if (window.innerWidth > 1000) {
             elementFade(homeMenu, 'fadeIn')
             menuActive = true
         }
+        elementFade(infoScreenBg, 'fadeOut')
         elementFade(infoScreen, 'fadeOut')
     })
 }
@@ -84,7 +89,8 @@ const menuLogic = () => {
             elementFade(homeMenu, 'fadeOut')
             menuActive = false
             clickedMenuItem = event.target.innerText
-            webgl.style.display = 'none'
+            // webgl.style.display = 'none'
+            elementFade(infoScreenBg, 'fadeIn')
             elementFade(infoScreen, 'fadeIn')
             changeMenu()
         })
@@ -97,9 +103,10 @@ const changeMenu = () => {
             textTransition(infoScreenText, text.infoAndPrices)
         break;
         case 'portfolio':
-            // if (window.innerWidth > 1000) displayStyle = 'row'
-            // else displayStyle = 'column'
-            textTransition(infoScreenText, text.portfolio)
+            textTransition(infoScreenText, text.portfolio).then(() => {
+                videos = document.querySelectorAll('video')
+                logicVideo(videos)
+            })
         break;
         case 'about':
             textTransition(infoScreenText, text.about)
@@ -127,4 +134,4 @@ const menuButtonLogic = () => {
     })
 }
 
-export { manupilateDom, webgl }
+export { manupilateDom, webgl, videos }

@@ -18,31 +18,37 @@ const elementFade = (element, fadeType) => {
 }
 
 const textTransition = (element, content) => {
-  let timeline = gsap.timeline()
-  timeline.to(element, {opacity: 0, duration: 0.3})
-  timeline.add(() => {
-    element.innerHTML = content
+  return new Promise(function(resolved, rejected) {
+    let timeline = gsap.timeline()
+    timeline.to(element, {opacity: 0, duration: 0.3})
+    timeline.add(() => {
+      element.innerHTML = content
+    })
+    timeline.to(element, {opacity: 1, duration: 0.3})
+    timeline.add(() => {
+      resolved()
+    })
+    timeline.play()
   })
-  timeline.to(element, {opacity: 1, duration: 0.3})
-  timeline.play()
+  
 }
 
 const setRandomInterval = (intervalFunction, minDelay, maxDelay) => {
   let timeout
-
+  
   const runInterval = () => {
     const timeoutFunction = () => {
       intervalFunction()
       runInterval()
     }
-
+    
     const delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay
-
+    
     timeout = setTimeout(timeoutFunction, delay)
   }
-
+  
   runInterval()
-
+  
   return {
     clear() { clearTimeout(timeout) }
   }

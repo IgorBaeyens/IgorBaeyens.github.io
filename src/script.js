@@ -9,6 +9,7 @@ import { loadScreen, raycastHitPosition } from './modules/logicScreen'
 import { manupilateDom } from './modules/domManipulation'
 import { pageLoaded } from './modules/logicLoading'
 import "particles.js"
+import { logicVideo } from './modules/logicVideo'
 
 
 // LIGHTS
@@ -32,7 +33,6 @@ loadScreen()
 //     console.log('callback - particles.js config loaded');
 //   });
 // })
-
 
 manupilateDom()
 

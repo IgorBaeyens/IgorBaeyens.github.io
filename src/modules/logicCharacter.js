@@ -23,7 +23,6 @@ const loadCharacter = () => {
     let blink = gsap.timeline()
     const mixer = new THREE.AnimationMixer(gltf.scene)
     const characterClips = gltf.animations
-    
     gltf.scene.traverse(object => {
       // if material name equals this, add toon material
       if(object.type == 'SkinnedMesh') {

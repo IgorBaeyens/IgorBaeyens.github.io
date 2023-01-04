@@ -1,8 +1,8 @@
 const prices = {
-    startingPrice: "<mark>750 EU</mark>",
+    startingPrice: "<mark>500 EU</mark>",
     accessory: "<mark>30 EU</mark>",
     expression: "<mark>20 EU</mark>",
-    outfit: "<mark>300 EU</mark>"
+    outfit: "<mark>200 EU</mark>"
 }
 
 const termPeriods = {
@@ -79,15 +79,20 @@ const text = {
         <div id="portfolio-content">
             <div>
                 <h1>Zel Kanis</h1>
-                <p>Persona</p>
+                <h2>Persona</h2>
                 <br>
-                <video src="assets/images/showcase_zel_wide_large.mp4" width="100%" type="video/mp4" loop controls></video>
+                <p>showcase</p>
+                <video src="assets/images/showcase_zel_wide_small.mp4" width="100%" type="video/mp4" loop controls></video>
             </div>
             <div>
                 <h1>Ninomae Ina'nis</h1>
-                <p>Fan-art</p>
+                <h2>Fan-art</h2>
                 <br>
-                <video src="assets/images/showcase_ina_wide_large.mp4" width="100%" type="video/mp4" loop controls></video>
+                <p>showcase</p>
+                <video src="assets/images/showcase_ina_wide_small.mp4" width="100%" type="video/mp4" loop controls></video>
+                <br>
+                <p>tracking</p>
+                <video src="assets/images/tracking_ina_small.mp4" width="100%" type="video/mp4" loop controls></video>
             </div>
         </div>
     `,
