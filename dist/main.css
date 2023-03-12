@@ -63,13 +63,14 @@ p, li, button {
 }
 
 li {
+    /* font-size: 14px !important; */
     list-style: none;
 }
 li:before {
     content: "";
 	  border: 2px rgb(255, 255, 255) solid !important;
 	  border-radius: 50px;
-	  margin-top: 14px;
+	  margin-top: 12px;
 	  margin-left: -15px;
 	  position: absolute;
 }
