@@ -85,22 +85,47 @@ const text = {
     `,
     portfolio: `
         <div id="portfolio-content">
-            <div>
-                <h1>Zel Kanis</h1>
-                <h2>Persona</h2>
+            <div class="portfolio-item">
+                <div class="portfolio-item__header">
+                    <div class="portfolio-item__title">
+                        <h1>Star Hopper Galaxy</h1>
+                        <p><small>Commission</small></p>
+                    </div>
+                    <p><a href="https://twitter.com/StarHopperGalax" target="_blank">@StarHopperGalax</a></p>
+                </div>
                 <br>
                 <p>showcase</p>
-                <video src="assets/images/showcase_zel_wide_small.mp4" width="100%" type="video/mp4" loop controls></video>
-            </div>
-            <div>
-                <h1>Ninomae Ina'nis</h1>
-                <h2>Fan-art</h2>
-                <br>
-                <p>showcase</p>
-                <video src="assets/images/showcase_ina_wide_small.mp4" width="100%" type="video/mp4" loop controls></video>
+                <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/-vNrGJM6aXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
                 <br>
                 <p>tracking</p>
-                <video src="assets/images/tracking_ina_small.mp4" width="100%" type="video/mp4" loop controls></video>
+                <iframe style="width:100%; aspect-ratio: 16/9; margin-top: 10px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/qd6y_UibH0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-item__header">
+                    <div class="portfolio-item__title">
+                        <h1>Ninomae Ina'nis</h1>
+                        <p><small>Fan-art</small></p>
+                    </div>
+                    <p><a href="https://twitter.com/ninomaeinanis" target="_blank">@ninomaeinanis</a></p>
+                </div>
+                <br>
+                <p>showcase</p>
+                <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/o_fyoxY5Agc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+                <br>
+                <p>tracking</p>
+                <iframe style="width:100%; aspect-ratio: 16/9; margin-top: 10px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/84DhdzhEODk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-item__header">
+                    <div class="portfolio-item__title">
+                        <h1>Zel Kanis</h1>
+                        <p><small>Persona</small></p>
+                    </div>
+                    <p><a href="https://twitter.com/kaniszel" target="_blank">@KanisZel</a></p>
+                </div>
+                <br>
+                <p>showcase</p>
+                <iframe style="width:100%; aspect-ratio: 16/9; margin-top: 10px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/NZtECxb3oRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
             </div>
         </div>
     `,
