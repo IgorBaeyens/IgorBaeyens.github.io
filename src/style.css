@@ -303,12 +303,17 @@ input[type="radio"] {
     border-radius: 10px;
     margin: 10px 0px 20px
 }
+#portfolio-content img {
+    border-radius: 10px;
+    margin: 10px 0px 20px
+}
 
 .portfolio-item {
-    background-color: rgba(253, 253, 253, 0.11);
+    height: fit-content;
     padding: 20px;
     margin: 20px 10px;
     border-radius: 10px;
+    background-color: rgba(253, 253, 253, 0.11);
 }
 .portfolio-item h1 {
     margin-bottom: 0px !important; 

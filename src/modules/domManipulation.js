@@ -96,7 +96,7 @@ const changeMenu = () => {
             textTransition(infoScreenText, text.infoAndPrices)
         break;
         case 'portfolio':
-            textTransition(infoScreenText, text.portfolio)
+            // textTransition(infoScreenText, text.portfolio)
         break;
         case 'about':
             textTransition(infoScreenText, text.about)
