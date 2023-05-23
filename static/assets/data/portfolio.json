@@ -1,5 +1,4 @@
-{
-    "porfolio": [
+[
         {
             "id": 1,
             "name": "Zel Kanis",
@@ -35,18 +34,5 @@
             },
             "showcase": "https://www.youtube-nocookie.com/embed/-vNrGJM6aXM",
             "tracking": "https://www.youtube-nocookie.com/embed/qd6y_UibH0M"
-        },
-        {
-            "id": 4,
-            "name": "Preji",
-            "type": "Commission",
-            "thumbnail": "",
-            "twitter": {
-                "name": "",
-                "link": ""
-            },
-            "showcase": "",
-            "tracking": ""
         }
     ]
-}

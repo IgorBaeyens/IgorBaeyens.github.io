@@ -1,3 +1,60 @@
+
+let portfolioItems = ``
+async function requestData() {
+    let response = await fetch("assets/data/portfolio.json")
+    let portfolioData = await response.json()
+
+    CreatePortfolioItems(portfolioData)
+}
+requestData()
+
+function CreatePortfolioItems(portfolioData) {
+    
+    //sort big to small
+    portfolioData = portfolioData.sort((itemOne, itemTwo) => {
+        if(itemOne.id > itemTwo.id) {
+            return -1
+        }
+    })
+
+    portfolioData.forEach(item => {
+        let trackingSubContent = ``
+
+        if (item.tracking != "") {
+            trackingSubContent = `
+            <br>
+            <p>tracking</p>
+            <iframe style="width:100%; aspect-ratio: 16/9; margin-top: 10px; border-radius: 10px;"  src="${item.tracking}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+            `
+        }
+
+        portfolioItems +=`
+        <div class="portfolio-item">
+            <div class="portfolio-item__header">
+                <div class="portfolio-item__title">
+                    <h1>${item.name}</h1>
+                    <p><small>${item.type}</small></p>
+                </div>
+                <p><a href="${item.twitter.link}" target="_blank">${item.twitter.name}</a></p>
+            </div>
+            <br>
+            <p>showcase</p>
+            <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="${item.showcase}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+            ${trackingSubContent}
+        </div>
+        `        
+    })
+
+    let portfolioContent = `
+    <div id="portfolio-content">
+        ${portfolioItems}
+    </div>
+    `
+
+    text.portfolio = portfolioContent
+}
+
+
 const prices = {
     startingPriceMin: "<mark>750 EU</mark>",
     startingPriceMax: "<mark>1000 EU</mark>",
@@ -83,52 +140,7 @@ const text = {
         <br><br>
         <a href="https://forms.gle/ZyPk4XVTiTTNDV1U8" target="_blank"><button id="button_commission" class="button interact">Commission Zel</button></a>
     `,
-    portfolio: `
-        <div id="portfolio-content">
-            <div class="portfolio-item">
-                <div class="portfolio-item__header">
-                    <div class="portfolio-item__title">
-                        <h1>Star Hopper Galaxy</h1>
-                        <p><small>Commission</small></p>
-                    </div>
-                    <p><a href="https://twitter.com/StarHopperGalax" target="_blank">@StarHopperGalax</a></p>
-                </div>
-                <br>
-                <p>showcase</p>
-                <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/-vNrGJM6aXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-                <br>
-                <p>tracking</p>
-                <iframe style="width:100%; aspect-ratio: 16/9; margin-top: 10px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/qd6y_UibH0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-item__header">
-                    <div class="portfolio-item__title">
-                        <h1>Ninomae Ina'nis</h1>
-                        <p><small>Fan-art</small></p>
-                    </div>
-                    <p><a href="https://twitter.com/ninomaeinanis" target="_blank">@ninomaeinanis</a></p>
-                </div>
-                <br>
-                <p>showcase</p>
-                <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/o_fyoxY5Agc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-                <br>
-                <p>tracking</p>
-                <iframe style="width:100%; aspect-ratio: 16/9; margin-top: 10px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/84DhdzhEODk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-item__header">
-                    <div class="portfolio-item__title">
-                        <h1>Zel Kanis</h1>
-                        <p><small>Persona</small></p>
-                    </div>
-                    <p><a href="https://twitter.com/kaniszel" target="_blank">@KanisZel</a></p>
-                </div>
-                <br>
-                <p>showcase</p>
-                <iframe style="width:100%; aspect-ratio: 16/9; margin-top: 10px; border-radius: 10px;"  src="https://www.youtube-nocookie.com/embed/NZtECxb3oRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-            </div>
-        </div>
-    `,
+    portfolio: ``,
     about: `
         <h1>About me</h1>
         <p>Hi. Zel here,</p>
@@ -188,5 +200,8 @@ const text = {
         </ul>
     `
 }
+
+
+
 
 export { text }
