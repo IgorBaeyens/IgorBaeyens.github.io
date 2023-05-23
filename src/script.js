@@ -8,8 +8,6 @@ import { loadCamera } from './modules/logicCamera'
 import { loadScreen, raycastHitPosition } from './modules/logicScreen'
 import { manupilateDom } from './modules/domManipulation'
 import { pageLoaded } from './modules/logicLoading'
-import "particles.js"
-import { logicVideo } from './modules/logicVideo'
 
 
 // LIGHTS
@@ -21,18 +19,6 @@ scene.add(light)
 loadCamera()
 loadCharacter()
 loadScreen()
-
-// PARTICLES
-
-// window.addEventListener('DOMContentLoaded', (event) => {
-//   window.particlesJS.load('particles-js_left', 'assets/particles/particlesjs-config.json', function() {
-//     console.log('callback - particles.js config loaded');
-//   });
-
-//   window.particlesJS.load('particles-js_right', 'assets/particles/particlesjs-config.json', function() {
-//     console.log('callback - particles.js config loaded');
-//   });
-// })
 
 manupilateDom()
 

@@ -1,13 +1,10 @@
 /* eslint-disable no-unused-vars */
-import gsap from "gsap"
 import { text } from "./content"
 import { elementFade, textTransition } from "./helpers"
-import { logicVideo } from "./logicVideo"
-import { sizes } from "./setup"
+
 
 let body = document.getElementById('body')
 let threeJsBackground = document.getElementById('threeJs-background')
-let particles = document.getElementsByClassName('particles')
 let webgl = document.getElementById('webgl')
 let logo = document.getElementById('logo')
 let menuButton = document.getElementById('menu-button')
@@ -63,8 +60,6 @@ const windowEdits = () => {
 const backToHomeLogic = () => {
     logo.addEventListener('click', () => {
         body.style.touchAction = 'none'
-        elementFade(particles[0], 'fadeIn')
-        elementFade(particles[1], 'fadeIn')
         // webgl.style.display = 'block'
         if (window.innerWidth > 1000) {
             elementFade(homeMenu, 'fadeIn')
@@ -84,8 +79,6 @@ const menuLogic = () => {
         let menuItem = homeMenu.children[i].children[0]
         menuItem.addEventListener('click', event => {
             body.style.touchAction = 'auto'
-            elementFade(particles[0], 'fadeOut')
-            elementFade(particles[1], 'fadeOut')
             elementFade(homeMenu, 'fadeOut')
             menuActive = false
             clickedMenuItem = event.target.innerText
@@ -103,10 +96,7 @@ const changeMenu = () => {
             textTransition(infoScreenText, text.infoAndPrices)
         break;
         case 'portfolio':
-            textTransition(infoScreenText, text.portfolio).then(() => {
-                videos = document.querySelectorAll('video')
-                logicVideo(videos)
-            })
+            textTransition(infoScreenText, text.portfolio)
         break;
         case 'about':
             textTransition(infoScreenText, text.about)

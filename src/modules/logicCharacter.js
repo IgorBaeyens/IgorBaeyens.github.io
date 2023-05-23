@@ -2,7 +2,6 @@
 import gsap from 'gsap'
 import * as THREE from 'three'
 import { LoopOnce } from 'three'
-import { customToonMaterial } from './customMaterial'
 import { setRandomInterval } from './helpers'
 import { loadGLTF } from "./loaders"
 import { raycastHitPosition } from './logicCamera'
