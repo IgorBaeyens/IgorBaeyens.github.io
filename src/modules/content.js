@@ -29,7 +29,7 @@ function CreatePortfolioItems(portfolioData) {
         }
 
         portfolioItems +=`
-        <div class="portfolio-item">
+        <div class="grid-item">
             <div class="portfolio-item__header">
                 <div class="portfolio-item__title">
                     <h1>${item.name}</h1>
@@ -38,15 +38,24 @@ function CreatePortfolioItems(portfolioData) {
                 <p><a href="${item.twitter.link}" target="_blank">${item.twitter.name}</a></p>
             </div>
             <br>
-            <p>showcase</p>
-            <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="${item.showcase}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-            ${trackingSubContent}
+            <div class="portfolio-item__thumbnail">
+                <img src="${item.thumbnail}" width="100%" alt="">
+            </div>
+            <div class="portfolio-item__videos" style="display: none;">
+                <p>showcase</p>
+                <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="${item.showcase}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+                ${trackingSubContent}
+            </div>
+            <div class="portfolio-item__toggle-space">
+                <img class="portfolio-item__toggle __scale interact" src="assets/images/arrow.svg" alt="">
+            </div>
         </div>
         `        
     })
 
     let portfolioContent = `
-    <div id="portfolio-content">
+    <div id="portfolio-content" class="grid">
+        <div class="grid-sizer"></div>
         ${portfolioItems}
     </div>
     `

@@ -15,7 +15,7 @@
             "id": 2,
             "name": "Ninomae Ina'nis",
             "type": "Fan-art",
-            "thumbnail": "",
+            "thumbnail": "assets/images/ref-sheet_ina.png",
             "twitter": {
                 "name": "@ninomaeinanis",
                 "link": "https://twitter.com/ninomaeinanis"
@@ -27,7 +27,7 @@
             "id": 3,
             "name": "Star Hopper Galaxy",
             "type": "Commission",
-            "thumbnail": "",
+            "thumbnail": "assets/images/ref-sheet_star.png",
             "twitter": {
                 "name": "@StarHopperGalax",
                 "link": "https://twitter.com/StarHopperGalax"

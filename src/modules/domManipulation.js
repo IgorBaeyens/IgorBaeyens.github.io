@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { text } from "./content"
-import { elementFade, textTransition } from "./helpers"
+import { elementFade, elementFadeIn, elementFadeOut, textTransition } from "./helpers"
 import MiniMasonry from "minimasonry"
 import Masonry from "masonry-layout"
 
@@ -22,19 +22,15 @@ let videos
 let menuActive = false
 let clickedMenuItem = ""
 
-// let masonry = new MiniMasonry({
-//     container: document.querySelector('.grid'),
-//     baseWidth: 400
+let masonry
+// let grid = document.querySelector('.grid')
+// masonry = new Masonry(grid, {
+//     itemSelector: '.grid-item',
+//     columnWidth: '.grid-sizer',
+//     percentPosition: true,
+//     gutter: 20,
+//     initLayout: true
 // })
-
-let grid = document.querySelector('.grid')
-let masonry = new Masonry(grid, {
-    itemSelector: '.grid-item',
-    columnWidth: '.grid-sizer',
-    percentPosition: true,
-    gutter: 20
-})
-
 
 const manupilateDom = () => {
     body.style.touchAction = 'none'
@@ -51,10 +47,7 @@ const manupilateDom = () => {
 
     menuButtonLogic()
     menuLogic()
-    
     backToHomeLogic()
-
-
 }
 
 const windowEdits = () => {
@@ -63,26 +56,23 @@ const windowEdits = () => {
         homeMenu.style.display = 'flex'
         homeMenu.style.opacity = 1
         menuActive = true
-        // if (clickedMenuItem.toLowerCase() == 'portfolio') infoScreenText.style.flexDirection = 'row'
     } else {
         expressionsBottom.appendChild(expressions)
         homeMenu.style.display = 'none'
         homeMenu.style.opacity = 0
         menuActive = false
-        // if (clickedMenuItem.toLowerCase() == 'portfolio') infoScreenText.style.flexDirection = 'column'
     }
 }
 
 const backToHomeLogic = () => {
     logo.addEventListener('click', () => {
         body.style.touchAction = 'none'
-        // webgl.style.display = 'block'
         if (window.innerWidth > 1000) {
-            elementFade(homeMenu, 'fadeIn')
+            elementFadeIn(homeMenu, 'flex')
             menuActive = true
         }
-        elementFade(infoScreenBg, 'fadeOut')
-        elementFade(infoScreen, 'fadeOut')
+        elementFadeOut(infoScreenBg)
+        elementFadeOut(infoScreen)
     })
 }
 
@@ -95,12 +85,11 @@ const menuLogic = () => {
         let menuItem = homeMenu.children[i].children[0]
         menuItem.addEventListener('click', event => {
             body.style.touchAction = 'auto'
-            elementFade(homeMenu, 'fadeOut')
+            elementFadeOut(homeMenu)
             menuActive = false
             clickedMenuItem = event.target.innerText
-            // webgl.style.display = 'none'
-            elementFade(infoScreenBg, 'fadeIn')
-            elementFade(infoScreen, 'fadeIn')
+            elementFadeIn(infoScreenBg, 'flex')
+            elementFadeIn(infoScreen, 'flex')
             changeMenu()
         })
     }
@@ -112,8 +101,21 @@ const changeMenu = () => {
             textTransition(infoScreenText, text.infoAndPrices)
         break;
         case 'portfolio':
-            // textTransition(infoScreenText, text.portfolio)
-            masonry.layout()
+            textTransition(infoScreenText, text.portfolio).then(() => {
+                let grid = document.querySelector('.grid')
+                masonry = new Masonry(grid, {
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-sizer',
+                    percentPosition: true,
+                    gutter: 20,
+                    initLayout: true
+                })
+                portfolioItemToggleLogic()
+            })
+            // setTimeout(() => {
+            //     masonry.layout()
+            //     portfolioItemToggleLogic()
+            // }, 100)
         break;
         case 'about':
             textTransition(infoScreenText, text.about)
@@ -132,13 +134,36 @@ const changeMenu = () => {
 const menuButtonLogic = () => {
     menuButton.addEventListener('click', () => { 
         if (menuActive) {
-            elementFade(homeMenu, 'fadeOut')
+            elementFadeOut(homeMenu)
             menuActive = false
         } else if (!menuActive) {
-            elementFade(homeMenu, 'fadeIn')
+            elementFadeIn(homeMenu, 'flex')
             menuActive = true
         }
     })
+}
+
+const portfolioItemToggleLogic = () => {
+    const toggleButtons = document.getElementsByClassName('portfolio-item__toggle')
+    const thumbnails = document.getElementsByClassName('portfolio-item__thumbnail')
+    const videos = document.getElementsByClassName('portfolio-item__videos')
+
+    for (let i = 0; i < toggleButtons.length; i++) {
+        toggleButtons[i].addEventListener('click', (event) => {
+            console.log(getComputedStyle(thumbnails[i]).display)
+            if (getComputedStyle(thumbnails[i]).display == "block") {
+                thumbnails[i].style.display = "none"
+                videos[i].style.display = "block"
+                toggleButtons[i].style.transform = "scale(1, -1)"
+            } else {
+                thumbnails[i].style.display = "block"
+                videos[i].style.display = "none"
+                toggleButtons[i].style.transform = "scale(1, 1)"
+            }
+            masonry.layout()
+        })        
+    }
+
 }
 
 export { manupilateDom, webgl, videos }

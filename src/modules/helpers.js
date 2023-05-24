@@ -3,7 +3,7 @@
 import gsap from "gsap"
 
 
-const elementFade = (element, fadeType) => {
+const elementFade = (element, fadeType, displayStyle = 'none') => {
   let duration = 0.5
   gsap.killTweensOf(element)
   if (fadeType === 'fadeIn') {
@@ -15,6 +15,20 @@ const elementFade = (element, fadeType) => {
       element.style.display = 'none'
     }})
   }
+}
+const elementFadeIn = (element, displayStyle = 'block') => {
+  let duration = 0.5
+  gsap.killTweensOf(element)
+  gsap.to(element, {opacity: 1, duration: duration, onStart: () => {
+    element.style.display = displayStyle
+  }})
+}
+const elementFadeOut = (element) => {
+  let duration = 0.5
+  gsap.killTweensOf(element)
+  gsap.to(element, {opacity: 0, duration: duration, onComplete: () => {
+    element.style.display = 'none'
+  }})
 }
 
 const textTransition = (element, content) => {
@@ -54,4 +68,4 @@ const setRandomInterval = (intervalFunction, minDelay, maxDelay) => {
   }
 }
 
-export { setRandomInterval, elementFade, textTransition }
+export { setRandomInterval, elementFade, elementFadeIn, elementFadeOut, textTransition }
