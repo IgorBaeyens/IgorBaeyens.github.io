@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { text } from "./content"
 import { elementFade, textTransition } from "./helpers"
+import MiniMasonry from "minimasonry"
+import Masonry from "masonry-layout"
 
 
 let body = document.getElementById('body')
@@ -19,6 +21,20 @@ let infoScreenText = document.getElementById('info-screen_text')
 let videos
 let menuActive = false
 let clickedMenuItem = ""
+
+// let masonry = new MiniMasonry({
+//     container: document.querySelector('.grid'),
+//     baseWidth: 400
+// })
+
+let grid = document.querySelector('.grid')
+let masonry = new Masonry(grid, {
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    percentPosition: true,
+    gutter: 20
+})
+
 
 const manupilateDom = () => {
     body.style.touchAction = 'none'
@@ -97,6 +113,7 @@ const changeMenu = () => {
         break;
         case 'portfolio':
             // textTransition(infoScreenText, text.portfolio)
+            masonry.layout()
         break;
         case 'about':
             textTransition(infoScreenText, text.about)
