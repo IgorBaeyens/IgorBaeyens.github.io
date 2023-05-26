@@ -46,14 +46,14 @@ function CreatePortfolioItems(portfolioData) {
                 <p><a href="${item.twitter.link}" target="_blank">${item.twitter.name}</a></p>
             </div>
             <br>
-            <div class="portfolio-item__thumbnail">
-                <img src="${item.thumbnail}" width="100%" alt="">
+            <div class="portfolio-item__thumbnail-container">
+                <img class="portfolio-item__thumbnail" src="${item.thumbnail}" width="100%" alt="">
             </div>
-            <div class="portfolio-item__videos" style="display: none;">
+            <div class="portfolio-item__videos-container" style="display: none;">
                 ${showcaseSubContent}
                 ${trackingSubContent}
             </div>
-            <div class="portfolio-item__toggle-space">
+            <div class="portfolio-item__toggle-container">
                 <img class="portfolio-item__toggle __scale interact" src="assets/images/arrow.svg" alt="">
             </div>
         </div>
