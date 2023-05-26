@@ -386,6 +386,7 @@ input[type="radio"] {
 }
 
 @media screen and (max-width: 1000px) {
+/* @media screen and (orientation: portrait) { */
     #menu-button {
         display: block;
         grid-area: right;

@@ -48,17 +48,16 @@ const applyStartingStyle = () => {
 
 const resizeWindowEdits = () => {
     if (window.innerWidth > 1000) {
+    // if (window.matchMedia("(orientation: landscape)").matches) {
         expressionsTop.appendChild(expressions)
         homeMenu.style.display = 'flex'
         homeMenu.style.opacity = 1
         menuActive = true
-        console.log(masonry)
     } else {
         expressionsBottom.appendChild(expressions)
         homeMenu.style.display = 'none'
         homeMenu.style.opacity = 0
         menuActive = false
-        console.log(masonry)
     }
 }
 
