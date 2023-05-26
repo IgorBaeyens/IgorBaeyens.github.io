@@ -3,7 +3,7 @@
             "id": 1,
             "name": "Zel Kanis",
             "type": "Persona",
-            "thumbnail": "",
+            "thumbnail": "assets/images/ref-sheet_zel.png",
             "twitter": {
                 "name": "@KanisZel",
                 "link": "https://twitter.com/kaniszel"
@@ -34,5 +34,17 @@
             },
             "showcase": "https://www.youtube-nocookie.com/embed/-vNrGJM6aXM",
             "tracking": "https://www.youtube-nocookie.com/embed/qd6y_UibH0M"
+        },
+        {
+            "id": 4,
+            "name": "Preji",
+            "type": "Commission",
+            "thumbnail": "assets/images/ref-sheet_preji.png",
+            "twitter": {
+                "name": "@template",
+                "link": ""
+            },
+            "showcase": "",
+            "tracking": ""
         }
     ]

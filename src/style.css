@@ -255,7 +255,10 @@ input[type="radio"] {
     /* IMPORTANT: IF WIDTH 100% CAUSE SCROLL LAG */
     width: 99.9%;
     height: 110%;
-    background-color: var(--styleBlack);
+    /* background-color: var(--styleBlack); */
+    
+    background: radial-gradient( rgba(77,61,37,1) 5%, #0D0E14 70%);
+    
 }
 
 #info-screen {
@@ -298,7 +301,7 @@ input[type="radio"] {
 }
 .grid-item {
     position: absolute;
-    /* transition: 0.2s; */
+    /* transition: height 2s; */
     border-radius: 10px;
     background-color: rgba(253, 253, 253, 0.11);
 }
@@ -355,7 +358,9 @@ input[type="radio"] {
 
 .portfolio-item__toggle {
     margin: 0 !important;
-    padding: 10px;
+    /* border-radius: 4px; */
+    padding: 10px 20px;
+    /* background-color: var(--styleBlack); */
 }
 
 .button {
@@ -435,12 +440,16 @@ input[type="radio"] {
     #portfolio-content {
         grid-template-columns: 1fr;
     }
+    .grid-sizer,
+    .grid-item { 
+        width: calc(100% - 40px) ; 
+        padding: 20px 20px 0px;
+        margin: 10px 0;
+    }
 
     #zel_gif {
-        /* position: static; */
         left: 50%;
         transform: translate(-50%, 0);
-        /* width: 100%; */
     }
 }
 

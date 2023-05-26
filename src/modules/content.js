@@ -19,6 +19,14 @@ function CreatePortfolioItems(portfolioData) {
 
     portfolioData.forEach(item => {
         let trackingSubContent = ``
+        let showcaseSubContent = ``
+
+        if (item.showcase != "") {
+            showcaseSubContent = `
+            <p>showcase</p>
+            <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="${item.showcase}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+            `
+        }
 
         if (item.tracking != "") {
             trackingSubContent = `
@@ -42,8 +50,7 @@ function CreatePortfolioItems(portfolioData) {
                 <img src="${item.thumbnail}" width="100%" alt="">
             </div>
             <div class="portfolio-item__videos" style="display: none;">
-                <p>showcase</p>
-                <iframe style="width:100%; aspect-ratio: 16/9; margin: 10px 0px 30px; border-radius: 10px;"  src="${item.showcase}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
+                ${showcaseSubContent}
                 ${trackingSubContent}
             </div>
             <div class="portfolio-item__toggle-space">

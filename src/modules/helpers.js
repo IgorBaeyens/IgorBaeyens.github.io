@@ -3,32 +3,34 @@
 import gsap from "gsap"
 
 
-const elementFade = (element, fadeType, displayStyle = 'none') => {
-  let duration = 0.5
-  gsap.killTweensOf(element)
-  if (fadeType === 'fadeIn') {
+
+const elementFadeIn = (element, displayStyle = 'block', duration = 0.5) => {
+  return new Promise(function(resolved, rejected) {
+    gsap.killTweensOf(element)
     gsap.to(element, {opacity: 1, duration: duration, onStart: () => {
-      element.style.display = 'flex'
+      element.style.display = displayStyle
+      resolved()
     }})
-  } else if (fadeType === 'fadeOut') {
+  })
+  
+}
+const elementFadeOut = (element, duration = 0.5) => {
+  return new Promise(function(resolved, rejected) { 
+    gsap.killTweensOf(element)
     gsap.to(element, {opacity: 0, duration: duration, onComplete: () => {
       element.style.display = 'none'
+      resolved()
     }})
-  }
+  })
 }
-const elementFadeIn = (element, displayStyle = 'block') => {
-  let duration = 0.5
-  gsap.killTweensOf(element)
-  gsap.to(element, {opacity: 1, duration: duration, onStart: () => {
-    element.style.display = displayStyle
-  }})
-}
-const elementFadeOut = (element) => {
-  let duration = 0.5
-  gsap.killTweensOf(element)
-  gsap.to(element, {opacity: 0, duration: duration, onComplete: () => {
-    element.style.display = 'none'
-  }})
+
+const dynamicElementHeightChange = (dynamicElement, originalHeight, targetHeight, duration = 0.2) => {
+  return new Promise(function(resolved, rejected) { 
+    gsap.killTweensOf(dynamicElement)
+    gsap.fromTo(dynamicElement, {height: originalHeight}, {height: targetHeight, duration: duration, onComplete: () => {
+      resolved()
+    }})
+  })
 }
 
 const textTransition = (element, content) => {
@@ -68,4 +70,4 @@ const setRandomInterval = (intervalFunction, minDelay, maxDelay) => {
   }
 }
 
-export { setRandomInterval, elementFade, elementFadeIn, elementFadeOut, textTransition }
+export { setRandomInterval, elementFadeIn, elementFadeOut, dynamicElementHeightChange, textTransition }
