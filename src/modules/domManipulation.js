@@ -18,9 +18,8 @@ let expressionsBottom = document.getElementById('bottom')
 let infoScreenBg = document.getElementById('info-screen_background')
 let infoScreen = document.getElementById('info-screen')
 let infoScreenText = document.getElementById('info-screen_text')
-let videos
-let menuActive = false
 
+let menuActive = false
 
 let masonry
 
@@ -33,6 +32,7 @@ const manupilateDom = () => {
     menuButtonLogic()
     menuNavigationLogic()
     backToHomeLogic()
+    zoomedThumbnailLogic()
 }
 
 const applyStartingStyle = () => {
@@ -48,17 +48,16 @@ const applyStartingStyle = () => {
 
 const resizeWindowEdits = () => {
     if (window.innerWidth > 1000) {
+    // if (window.matchMedia("(orientation: landscape)").matches) {
         expressionsTop.appendChild(expressions)
         homeMenu.style.display = 'flex'
         homeMenu.style.opacity = 1
         menuActive = true
-        console.log(masonry)
     } else {
         expressionsBottom.appendChild(expressions)
         homeMenu.style.display = 'none'
         homeMenu.style.opacity = 0
         menuActive = false
-        console.log(masonry)
     }
 }
 
@@ -97,6 +96,13 @@ const menuNavigationLogic = () => {
     }
 }
 
+const zoomedThumbnailLogic = () => {
+    const zoomedThumbnailContainer = document.getElementsByClassName('zoomed-thumbnail-container')[0]
+    zoomedThumbnailContainer.addEventListener('click', (event) => {
+        elementFadeOut(zoomedThumbnailContainer)
+    })
+}
+
 const backToHomeLogic = () => {
     logo.addEventListener('click', () => {
         body.style.touchAction = 'none'
@@ -124,6 +130,7 @@ const changeMenu = (clickedMenuItem) => {
                 gutter: 20,
                 initLayout: true
             })
+            portfolioThumbnailZoomLogic()
             portfolioItemToggleLogic()
         })
         break;
@@ -141,30 +148,41 @@ const changeMenu = (clickedMenuItem) => {
     }
 }
 
-const imageZoomLogic = () => {}
+const portfolioThumbnailZoomLogic = () => {
+    const thumbnails = document.getElementsByClassName('portfolio-item__thumbnail')
+    const zoomedThumbnailContainer = document.getElementsByClassName('zoomed-thumbnail-container')[0]
+
+    for (let i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].addEventListener('click', (event) => { 
+            zoomedThumbnailContainer.innerHTML = event.target.outerHTML
+            zoomedThumbnailContainer.children[0].classList.replace("portfolio-item__thumbnail", "zoomed-thumbnail")
+            elementFadeIn(zoomedThumbnailContainer, "flex")
+        })
+    }
+}
 
 const portfolioItemToggleLogic = () => {
     const portfolioItems = document.getElementsByClassName('grid-item')
     const toggleButtons = document.getElementsByClassName('portfolio-item__toggle')
-    const thumbnails = document.getElementsByClassName('portfolio-item__thumbnail')
-    const videos = document.getElementsByClassName('portfolio-item__videos')
+    const thumbnailContainers = document.getElementsByClassName('portfolio-item__thumbnail-container')
+    const videoContainers = document.getElementsByClassName('portfolio-item__videos-container')
     
     for (let i = 0; i < toggleButtons.length; i++) {
         toggleButtons[i].addEventListener('click', (event) => {
             let itemHeightOpen
             let itemHeightClose
             
-            if (getComputedStyle(thumbnails[i]).display == "block") {
+            if (getComputedStyle(thumbnailContainers[i]).display == "block") {
                 itemHeightClose = getComputedStyle(portfolioItems[i]).height
-                thumbnails[i].style.display = "none"
-                videos[i].style.display = "block"
+                thumbnailContainers[i].style.display = "none"
+                videoContainers[i].style.display = "block"
                 itemHeightOpen = getComputedStyle(portfolioItems[i]).height
-                thumbnails[i].style.display = "block"
-                videos[i].style.display = "none"
+                thumbnailContainers[i].style.display = "block"
+                videoContainers[i].style.display = "none"
                 
-                elementFadeOut(thumbnails[i]).then(() => {
+                elementFadeOut(thumbnailContainers[i]).then(() => {
                     dynamicElementHeightChange(portfolioItems[i], itemHeightClose, itemHeightOpen, 0.2).then(() => {
-                        elementFadeIn(videos[i]).then(() => {
+                        elementFadeIn(videoContainers[i]).then(() => {
                             portfolioItems[i].style.height = "fit-content"
                             masonry.layout()
                         })
@@ -179,15 +197,15 @@ const portfolioItemToggleLogic = () => {
                 })
             } else {
                 itemHeightOpen = getComputedStyle(portfolioItems[i]).height
-                thumbnails[i].style.display = "block"
-                videos[i].style.display = "none"
+                thumbnailContainers[i].style.display = "block"
+                videoContainers[i].style.display = "none"
                 itemHeightClose = getComputedStyle(portfolioItems[i]).height
-                thumbnails[i].style.display = "none"
-                videos[i].style.display = "block"
+                thumbnailContainers[i].style.display = "none"
+                videoContainers[i].style.display = "block"
                 
-                elementFadeOut(videos[i]).then(() => {
+                elementFadeOut(videoContainers[i]).then(() => {
                     dynamicElementHeightChange(portfolioItems[i], itemHeightOpen, itemHeightClose).then(() => {
-                        elementFadeIn(thumbnails[i]).then(() => {
+                        elementFadeIn(thumbnailContainers[i]).then(() => {
                             portfolioItems[i].style.height = "fit-content"
                             masonry.layout()
                         })
@@ -206,4 +224,4 @@ const portfolioItemToggleLogic = () => {
     
 }
 
-export { manupilateDom, webgl, videos }
+export { manupilateDom, webgl }

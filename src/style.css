@@ -40,6 +40,9 @@
     --styleBlue: #46D0EE;
     --styleYellow: #FAC96B;
     --styleBlack: #0D0E14;
+    --zLayer1: 10;
+    --zLayer2: 20;
+    --zLayer3: 30;
 }
 
 /*////////*/
@@ -153,7 +156,7 @@ input[type="radio"] {
 #menu-button {
     display: none;
     justify-self: right;
-    z-index: 20;
+    z-index: var(--zLayer2);
 }
 
 #expressions {
@@ -213,7 +216,7 @@ input[type="radio"] {
 
 #logo-container {
     margin-top: 10px;
-    z-index: 10;
+    z-index: var(--zLayer1);
 }
 
 #header-menu {
@@ -310,18 +313,19 @@ input[type="radio"] {
     
 }
 
-.portfolio-item__thumbnail {
+.portfolio-item__thumbnail-container {
     margin: 0 0 5px
 }
-.portfolio-item__thumbnail img {
+.portfolio-item__thumbnail-container img {
+    cursor: pointer;
     border-radius: 10px;
 }
 
-.portfolio-item__videos {
+.portfolio-item__videos-container {
     margin: 0 0 5px
 }
 
-.portfolio-item__toggle-space {
+.portfolio-item__toggle-container {
     display: flex;
     justify-content: center;
     margin: 0 0 10px !important;
@@ -330,6 +334,23 @@ input[type="radio"] {
 .portfolio-item__toggle {
     margin: 0 !important;
     padding: 10px 20px;
+}
+
+.zoomed-thumbnail-container {
+    display: none;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: var(--zLayer3);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.712);
+}
+.zoomed-thumbnail {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .button {
@@ -365,6 +386,7 @@ input[type="radio"] {
 }
 
 @media screen and (max-width: 1000px) {
+/* @media screen and (orientation: portrait) { */
     #menu-button {
         display: block;
         grid-area: right;
@@ -377,11 +399,12 @@ input[type="radio"] {
 
     #home-menu {
         display: none;
+        position: fixed;
         width: 100%;
         height: 100%;
         align-items: center;
         justify-content: center;
-        z-index: 10;
+        z-index: var(--zLayer1);
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.712);
