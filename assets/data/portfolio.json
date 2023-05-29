@@ -1,0 +1,39 @@
+[
+        {
+            "id": 1,
+            "name": "Zel Kanis",
+            "type": "Persona",
+            "thumbnail": "assets/images/ref-sheet_zel.png",
+            "twitter": {
+                "name": "@KanisZel",
+                "link": "https://twitter.com/kaniszel"
+            },
+            "showcase": "https://www.youtube-nocookie.com/embed/NZtECxb3oRM",
+            "tracking": ""
+        },
+        {
+            "id": 2,
+            "name": "Ninomae Ina'nis",
+            "type": "Fan-art",
+            "thumbnail": "assets/images/ref-sheet_ina.png",
+            "twitter": {
+                "name": "@ninomaeinanis",
+                "link": "https://twitter.com/ninomaeinanis"
+            },
+            "showcase": "https://www.youtube-nocookie.com/embed/o_fyoxY5Agc",
+            "tracking": "https://www.youtube-nocookie.com/embed/84DhdzhEODk"
+        },
+        {
+            "id": 3,
+            "name": "Star Hopper Galaxy",
+            "type": "Commission",
+            "thumbnail": "assets/images/ref-sheet_star.png",
+            "twitter": {
+                "name": "@StarHopperGalax",
+                "link": "https://twitter.com/StarHopperGalax"
+            },
+            "showcase": "https://www.youtube-nocookie.com/embed/-vNrGJM6aXM",
+            "tracking": "https://www.youtube-nocookie.com/embed/qd6y_UibH0M"
+        }
+        
+    ]
