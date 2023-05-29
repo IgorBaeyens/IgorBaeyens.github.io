@@ -316,9 +316,14 @@ input[type="radio"] {
 .portfolio-item__thumbnail-container {
     margin: 0 0 5px
 }
-.portfolio-item__thumbnail-container img {
+
+.portfolio-item__thumbnail {
     cursor: pointer;
     border-radius: 10px;
+    transition: 0.2s;
+}
+.portfolio-item__thumbnail:hover {
+    transform: scale(0.95);
 }
 
 .portfolio-item__videos-container {
@@ -348,10 +353,11 @@ input[type="radio"] {
     background-color: rgba(0, 0, 0, 0.712);
 }
 .zoomed-thumbnail {
-    width: 90%;
+    width: 80%;
     height: auto;
     border-radius: 10px;
 }
+
 
 .button {
     width: 200px;
