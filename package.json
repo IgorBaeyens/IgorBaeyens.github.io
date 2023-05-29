@@ -6,7 +6,7 @@
     "build": "webpack --config ./bundler/webpack.prod.js",
     "dev": "webpack serve --config ./bundler/webpack.dev.js",
     "add-domain": "echo 'zelkanis.com' > dist/CNAME",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@babel/core": "^7.13.1",
