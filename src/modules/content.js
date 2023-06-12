@@ -108,7 +108,7 @@ const text = {
         <p><b>Following things can be added on top:</b></p>
         <ul>
             <li>VRM and VSF format with physics for vtubing: <mark>${prices.vsfAndVrm}</mark></li>
-            <li>textured base model: <mark>${prices.baseModel}</mark></li>
+            <li>textured and rigged base model: <mark>${prices.baseModel}</mark></li>
             <li>ARkit blendshapes: <mark>${prices.ARKit}</mark></li>
             <li>extra toggleable accessories  (glasses, hat, etc): <mark>${prices.accessoryMin}</mark>~<mark>${prices.accessoryMax}</mark> each</li>
             <li>extra expressions: <mark>${prices.expressionMin}</mark>~<mark>${prices.expressionMax}</mark> each</li>
