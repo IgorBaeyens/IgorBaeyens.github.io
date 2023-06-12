@@ -177,7 +177,7 @@ const text = {
             <li><mark>a commission is considered started when</mark> the client has paid 50% of the Paypal invoice price</li>
             <li><mark>a commission is finished when</mark> the client has seen that the product works as advertised and has received a zip folder containing the agreed upon files of the character</li>
             <li>a commission can take up to <mark>${termPeriods.commPeriodMonths} months</mark> time (<mark>${termPeriods.commPeriodDays} days</mark>)</li>
-            <li>I will send <mark>updates</mark> after completing following stages of the commission: modelling the base, modelling the outfit and hair, texturing, rigging, creating all of the blendshapes and converting the character to vrm format </li>
+            <li>I will send <mark>updates</mark> after completing following stages of the commission: modelling the base, modelling the outfit and hair, texturing, rigging, creating all of the blendshapes and converting the character to vrm and vsf format </li>
             <li>there is no set limit on <mark>revisions</mark>. However, i do not see big changes that deviate from the originally given reference as a revision</li>
             <li><mark>re-selling</mark> of the commission files or it’s contents is not allowed by either me or the client</li>
             <li><mark>i am allowed to post updates and make WIP posts</mark> on social media and show the end result on my portfolio., <mark>unless</mark> the client specifies through the Google Form they want me to wait until they themselves reveal the 3D model.
@@ -196,9 +196,7 @@ const text = {
         <p><b>Refunding</b></p>
         <ul>
             <li>if <mark>I cancel the commission</mark> the client will be fully refunded</li>
-            <li>if <mark>I do not finish the commission</mark> in the ${termPeriods.commPeriodDays} day commission deadline the client may choose to be fully refunded but then they will not receive the commission files</li>
-            <li>if the <mark>client cancels within ${termPeriods.refundPeriodDays} days</mark> of starting the commission they will be fully refunded minus a cancellation fee of 10%</li>
-            <li>if the <mark>client cancels after the ${termPeriods.refundPeriodDays} day period</mark> they will not be refunded</li>
+            <li>if <mark>the client cancels after the commission has started</mark> they will be refunded based on the amount of work completed
             <li>no refunds will be issued <mark>after the commission is finished</mark></li>
         </ul>
     `,
