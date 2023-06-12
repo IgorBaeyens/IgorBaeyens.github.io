@@ -122,16 +122,19 @@ const changeMenu = (clickedMenuItem) => {
         break;
         case 'portfolio':
         textTransition(infoScreenText, text.portfolio).then(() => {
-            let grid = document.querySelector('.grid')
-            masonry = new Masonry(grid, {
-                itemSelector: '.grid-item',
-                columnWidth: '.grid-sizer',
-                percentPosition: true,
-                gutter: 20,
-                initLayout: true
-            })
-            portfolioThumbnailZoomLogic()
-            portfolioItemToggleLogic()
+            setTimeout(() => {
+                let grid = document.querySelector('.grid')
+                masonry = new Masonry(grid, {
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-sizer',
+                    percentPosition: true,
+                    gutter: 20,
+                    initLayout: true
+                })
+                portfolioThumbnailZoomLogic()
+                portfolioItemToggleLogic()
+                
+            }, 100);
         })
         break;
         case 'about':
@@ -152,7 +155,13 @@ const portfolioThumbnailZoomLogic = () => {
     const thumbnails = document.getElementsByClassName('portfolio-item__thumbnail')
     const zoomedThumbnailContainer = document.getElementsByClassName('zoomed-thumbnail-container')[0]
 
+    let thumbnailsLoaded = 0
+
     for (let i = 0; i < thumbnails.length; i++) {
+        // thumbnails[i].onload = () => {
+        //     console.log("loaded")
+        // }
+
         thumbnails[i].addEventListener('click', (event) => { 
             zoomedThumbnailContainer.innerHTML = event.target.outerHTML
             zoomedThumbnailContainer.children[0].classList.replace("portfolio-item__thumbnail", "zoomed-thumbnail")
@@ -184,7 +193,9 @@ const portfolioItemToggleLogic = () => {
                     dynamicElementHeightChange(portfolioItems[i], itemHeightClose, itemHeightOpen, 0.2).then(() => {
                         elementFadeIn(videoContainers[i]).then(() => {
                             portfolioItems[i].style.height = "fit-content"
-                            masonry.layout()
+                            setTimeout(() => {
+                                masonry.layout()    
+                            }, 100);
                         })
                     })
                 })
@@ -207,7 +218,9 @@ const portfolioItemToggleLogic = () => {
                     dynamicElementHeightChange(portfolioItems[i], itemHeightOpen, itemHeightClose).then(() => {
                         elementFadeIn(thumbnailContainers[i]).then(() => {
                             portfolioItems[i].style.height = "fit-content"
-                            masonry.layout()
+                            setTimeout(() => {
+                                masonry.layout()    
+                            }, 100);
                         })
                     })
                 })
