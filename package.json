@@ -4,7 +4,8 @@
   "main": "src/script.js",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
-    "dev": "webpack serve --config ./bundler/webpack.dev.js",
+    "scss": "sass --watch ./src/scss/style.scss ./src/css/style.css ",
+    "dev": "webpack serve --config ./bundler/webpack.dev.js && sass --watch ./src/scss/style.scss ./src/css/style.css",
     "add-domain": "echo 'zelkanis.com' > dist/CNAME",
     "deploy": "gh-pages -d dist"
   },
@@ -31,6 +32,8 @@
     "particles.js": "^2.0.0",
     "portfinder-sync": "0.0.2",
     "raw-loader": "^4.0.2",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
     "style-loader": "^2.0.0",
     "three": "^0.126.0",
     "three-extend-material": "^1.0.0",

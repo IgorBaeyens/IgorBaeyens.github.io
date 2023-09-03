@@ -1,0 +1,78 @@
+/*///////*/
+/*///////*/
+/* fonts */
+/*///////*/
+/*///////*/
+/* k2d-700 - latin */
+@font-face {
+  font-family: "K2D";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../static/assets/fonts/k2d-v9-latin-700.woff") format("woff"), url("../../static/assets/fonts/k2d-v9-latin-700.woff2") format("woff2"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* jura-regular - latin */
+@font-face {
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../static/assets/fonts/jura-v24-latin-300.woff2") format("woff2"), url("../../static/assets/fonts/jura-v24-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/*///////////*/
+/*///////////*/
+/* variables */
+/*///////////*/
+/*///////////*/
+/*////////*/
+/*////////*/
+/* design */
+/*////////*/
+/*////////*/
+html, body {
+  margin: 0;
+  overflow: hidden;
+  color: #f8f8f8;
+}
+
+h1, h2, h3 {
+  font-family: "K2D";
+}
+
+p, li {
+  font-family: "Jura";
+}
+
+li {
+  list-style: none;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  width: 300%;
+  height: 300%;
+  background-image: url("/static/assets/images/background.png");
+  background-repeat: repeat;
+  transform-origin: 0% 0%;
+  transform: rotate(10deg) translate(-12.5%, -12.5%) scale(0.6);
+}
+
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1300px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 600px;
+}
+.logo {
+  width: 200px;
+}
+
+/*# sourceMappingURL=style.css.map */
