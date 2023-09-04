@@ -45,6 +45,11 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: #f8f8f8;
+}
+
 .background {
   position: fixed;
   z-index: -1;
@@ -64,6 +69,7 @@ li {
   max-width: 1300px;
   left: 50%;
   transform: translate(-50%, 0%);
+  margin: 20px 0px;
 }
 .header__menu {
   display: flex;

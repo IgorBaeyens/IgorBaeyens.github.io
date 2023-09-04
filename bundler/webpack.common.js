@@ -19,8 +19,14 @@ module.exports = {
             ]
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html'),
-            minify: true
+            filename: 'index.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/index.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'news.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/news.html'),
         }),
         new MiniCSSExtractPlugin()
     ],
