@@ -28,6 +28,21 @@ module.exports = {
             minify: true,
             template: path.resolve(__dirname, '../src/pages/news.html'),
         }),
+        new HtmlWebpackPlugin({
+            filename: 'portfolio.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/portfolio.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'commission.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/commission.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'contact.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/contact.html'),
+        }),
         new MiniCSSExtractPlugin()
     ],
     module:

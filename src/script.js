@@ -1,26 +1,18 @@
 /* eslint-disable no-unused-vars */
 import './css/style.css'
-import * as THREE from 'three'
 import gsap from 'gsap'
-import { pageLoaded } from './modules/logicLoading'
+import { addPortfolioLogic } from './modules/portfolioLogic'
 
 
-let started = false
-const start = () => {
-  
-
-  started = true
+if (document.URL.includes("portfolio")) {
+  addPortfolioLogic()
 }
 
 const update = () => { 
-  if(pageLoaded) {
-    if(!started) start()
-  }
+
 
 
   
   window.requestAnimationFrame(update)
 }
 update()
-
-export { start }

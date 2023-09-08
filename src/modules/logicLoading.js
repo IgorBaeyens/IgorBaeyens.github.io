@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import * as THREE from 'three'
-import { start } from '../script'
 
 const loadingManager = new THREE.LoadingManager()
 let pageLoaded = false
