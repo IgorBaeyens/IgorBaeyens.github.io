@@ -33,7 +33,8 @@ $zLayer1: 10;
 $zLayer2: 20;
 $zLayer3: 30;
 $fontSizeText: 16px;
-$fontSizeTitle: 20px;
+$fontSizeTitle: 20px ;
+$fontSizeLarge: 100px;
 
 /*////////*/
 /*////////*/
@@ -43,8 +44,9 @@ $fontSizeTitle: 20px;
 
 html, body {
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     color: $colorWhite;
+    
 }
 
 h1, h2, h3 {
@@ -55,6 +57,10 @@ h1, h2, h3 {
 p, li {
     font-family: 'Jura';
     font-size: $fontSizeText;
+}
+
+ul {
+    padding: 0;
 }
 
 li {
@@ -84,6 +90,59 @@ main {
     transform: rotate(10deg) translate(-12.5%, -12.5%) scale(0.6);
 }
 
+.portrait-menu {
+    display: none;
+    opacity: 0;
+    z-index: $zLayer1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000d2;
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 100%;
+    }
+    &__item {
+        font-family: 'k2d';
+        font-size: calc(30px + 4vmin);
+        margin: 4px 0;
+    }
+
+    &__button {
+        display: none;
+        cursor: pointer;
+        z-index: $zLayer1;
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        height: 18px;
+        width: 30px;
+
+        &--part {
+            position: absolute;
+            width: inherit;
+            left: 0;
+        }
+        &__top {
+            top: 0;
+            
+        }
+        &__mid {
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        &__bot {
+            bottom: 0;
+
+        }
+    }
+}
+
 .page {
     display: flex;
     flex-direction: column;
@@ -95,6 +154,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: $zLayer1;
     width: 90%;
     max-width: 1300px;
     padding: 0px 20px;
@@ -103,7 +163,6 @@ main {
     &__menu {
         display: flex;
         justify-content: space-between;
-        padding: 0;
         width: 500px;
 
         &__item {
@@ -124,6 +183,7 @@ main {
 }
 
 .logo {
+
     width: 200px;
     transition: 0.2s;
 }
@@ -134,12 +194,11 @@ main {
 
 .scrolling-title {
     display: flex;
-    // overflow: hidden;
     width: 100%;
 
     &__text {
         user-select: none;
-        font-size: 100px;
+        font-size: $fontSizeLarge;
         white-space: nowrap;
         color: #ffffff25;
         animation: scrollText 30s infinite linear;
@@ -149,23 +208,25 @@ main {
 
 .specific-content {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
+    // padding: 0px 40px;
+    margin: 0px 0px 40px;
 }
 
 .portfolio {
-    
+    margin: 0px 4%;
 
     &__items {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        column-gap: 14px;
-        row-gap: 14px;
+        column-gap: 8px;
+        row-gap: 8px;
     }
 
     &__item {
         cursor: pointer;
         position: relative;
-        border-radius: 15px;
+        border-radius: 3%;
         overflow: hidden;
         aspect-ratio: 1 / 1;
 
@@ -226,11 +287,65 @@ main {
 /*////////////*/
 
 @media (orientation: portrait) {
+    .portrait-menu__button {
+        display: block;
+    }
+
+    .header {
+        justify-content: center;
+
+        &__menu {
+            display: none;
+            
+        }
+    }
+
+    // .specific-content {
+    //     width: 80%;
+    // }
+
     .portfolio {
-        grid-template-columns: 1fr 1fr;
+        
+
+        &__item {
+
+            &__info {
+                bottom: 0;
+            }
+        }
     }
 }
 
+@media (max-width: 946px) {
+    .portfolio {
+        &__items {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .portfolio {
+        &__items {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media (max-width: 522px) {
+    $fontSizeText: 10px;
+    $fontSizeTitle: 14px;
+
+    h1, h2, h3 {
+        font-family: 'K2D';
+        font-size: $fontSizeTitle;
+        margin: 0;
+    }
+    p, li {
+        font-family: 'Jura';
+        font-size: $fontSizeText;
+    }
+}
 
 /*///////////*/
 /*///////////*/

@@ -26,7 +26,7 @@ const addPortfolioLogic = () => {
             </div>
             `
         }
-        // addHTMLToDiv(portfolio, htmlPortfolioItems)
+        addHTMLToDiv(portfolio, htmlPortfolioItems)
     }
     
     const addHTMLToDiv = (div, htmlString) => {
