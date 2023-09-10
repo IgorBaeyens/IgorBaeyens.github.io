@@ -39,6 +39,10 @@ p, li {
   font-size: 16px;
 }
 
+p {
+  margin: 0;
+}
+
 ul {
   padding: 0;
 }
@@ -53,16 +57,13 @@ a {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
 }
 
 .background {
   position: fixed;
   z-index: -1;
-  width: 300%;
+  width: 400%;
   height: 300%;
   background-image: url("/static/assets/images/background.png");
   background-repeat: repeat;
@@ -73,7 +74,7 @@ main {
 .portrait-menu {
   display: none;
   opacity: 0;
-  z-index: 10;
+  z-index: 30;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -95,7 +96,7 @@ main {
 .portrait-menu__button {
   display: none;
   cursor: pointer;
-  z-index: 10;
+  z-index: 30;
   position: fixed;
   bottom: 5%;
   right: 5%;
@@ -105,6 +106,7 @@ main {
 .portrait-menu__button--part {
   position: absolute;
   width: inherit;
+  box-shadow: 0px 0px 8px 0px #000000;
   left: 0;
 }
 .portrait-menu__button__top {
@@ -129,7 +131,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 30;
   width: 90%;
   max-width: 1300px;
   padding: 0px 20px;
@@ -173,14 +175,10 @@ main {
 }
 
 .specific-content {
-  width: 100%;
   max-width: 1000px;
-  margin: 0px 0px 40px;
+  margin: 30px auto 40px;
 }
 
-.portfolio {
-  margin: 0px 4%;
-}
 .portfolio__items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -234,6 +232,95 @@ main {
   transform: translate(-50%, 0) scale(1.1);
 }
 
+.portfolio-image-viewer__container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.portfolio-image-viewer__close-button {
+  position: absolute;
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 0.5;
+  top: -14px;
+  right: -14px;
+}
+.portfolio-image-viewer__close-button:hover {
+  opacity: 1;
+}
+.portfolio-image-viewer__info {
+  position: relative;
+  height: 100px;
+  margin-top: 2%;
+}
+.portfolio-image-viewer__title {
+  position: absolute;
+}
+.portfolio-image-viewer__link {
+  position: absolute;
+  top: 30px;
+}
+.portfolio-image-viewer__date {
+  position: absolute;
+  right: 0;
+}
+
+.carousel {
+  overflow: hidden;
+  border-radius: 14px;
+  background-color: #060c22;
+  height: 100%;
+}
+.carousel__slider {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.carousel__slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-viewer__dots {
+  display: flex;
+  position: absolute;
+  bottom: -2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 60%;
+  justify-content: space-evenly;
+}
+
+.image-viewer__dot {
+  appearance: none;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 5%;
+  box-shadow: 0px 0px 8px 0px #000000;
+  aspect-ratio: 1/1;
+  margin: 0;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.image-viewer__dot:hover {
+  background-color: #ffbf6e;
+  transform: scale(1.15);
+}
+
+.image-viewer__dot:checked {
+  background-color: #4ddeff;
+}
+
+.portfolio-image {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
 .selected {
   color: #4ddeff;
 }
@@ -253,8 +340,22 @@ main {
   .header__menu {
     display: none;
   }
+  .specific-content {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
   .portfolio__item__info {
     bottom: 0;
+  }
+  .portfolio-image-viewer__container {
+    aspect-ratio: auto;
+    height: 560px;
+  }
+  .carousel__slider {
+    aspect-ratio: auto;
+  }
+  .carousel__slide {
+    aspect-ratio: auto;
   }
 }
 @media (max-width: 946px) {
@@ -275,7 +376,7 @@ main {
   }
   p, li {
     font-family: "Jura";
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 /*///////////*/

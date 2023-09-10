@@ -29,9 +29,9 @@ $colorBlue: #4ddeff;
 $colorYellow: #ffbf6e;
 $colorRed: #fc4c4c;
 $colorWhite: #f8f8f8;
+$layerPortraitMenu: 30;
 $zLayer1: 10;
-$zLayer2: 20;
-$zLayer3: 30;
+
 $fontSizeText: 16px;
 $fontSizeTitle: 20px ;
 $fontSizeLarge: 100px;
@@ -59,6 +59,10 @@ p, li {
     font-size: $fontSizeText;
 }
 
+p {
+    margin: 0;
+}
+
 ul {
     padding: 0;
 }
@@ -73,16 +77,17 @@ a {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // margin: auto;
     width: 100%;
 }
 
 .background {
     position: fixed;
     z-index: -1;
-    width: 300%;
+    width: 400%;
     height: 300%;
     background-image: url("/static/assets/images/background.png");
     background-repeat: repeat;
@@ -93,7 +98,7 @@ main {
 .portrait-menu {
     display: none;
     opacity: 0;
-    z-index: $zLayer1;
+    z-index: $layerPortraitMenu;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -116,7 +121,7 @@ main {
     &__button {
         display: none;
         cursor: pointer;
-        z-index: $zLayer1;
+        z-index: $layerPortraitMenu;
         position: fixed;
         bottom: 5%;
         right: 5%;
@@ -126,6 +131,7 @@ main {
         &--part {
             position: absolute;
             width: inherit;
+            box-shadow: 0px 0px 8px 0px #000000;
             left: 0;
         }
         &__top {
@@ -154,7 +160,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: $zLayer1;
+    z-index: $layerPortraitMenu;
     width: 90%;
     max-width: 1300px;
     padding: 0px 20px;
@@ -207,14 +213,15 @@ main {
 }
 
 .specific-content {
-    width: 100%;
+    // width: 100%;
     max-width: 1000px;
     // padding: 0px 40px;
-    margin: 0px 0px 40px;
+    // margin: 0px 4% 40px;
+    margin: 30px auto 40px;
 }
 
 .portfolio {
-    margin: 0px 4%;
+    // margin: 0px 4%;
 
     &__items {
         display: grid;
@@ -276,6 +283,106 @@ main {
     }
 }
 
+.portfolio-image-viewer {
+    
+
+    &__container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        
+    }
+
+    &__close-button {
+        position: absolute;
+        cursor: pointer;
+        transition: 0.2s;
+        opacity: 0.5;
+        top: -14px;
+        right: -14px;
+    }
+    &__close-button:hover {
+        opacity: 1;
+    }
+
+    &__info {
+        position: relative;
+        height: 100px;
+        margin-top: 2%;
+    }
+    &__title {
+        position: absolute;
+    }
+    &__link {
+        position: absolute;
+        top: 30px;
+    }
+    &__date {
+        position: absolute;
+        right: 0;
+
+    }
+}
+
+.carousel {
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: #060c22;
+    height: 100%;
+
+    &__slider {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        // width: 100%;
+        height: 100%;
+    }
+    
+
+    &__slide { 
+        position: relative;
+        // width: 300px;
+        // aspect-ratio: 16/9;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.image-viewer__dots {
+    display: flex;
+    position: absolute;
+    bottom: -2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60%;
+    justify-content: space-evenly;
+}
+.image-viewer__dot {
+    appearance: none;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 5%;
+    box-shadow: 0px 0px 8px 0px #000000;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    border-radius: 100%;
+    background-color: white;
+}
+.image-viewer__dot:hover {
+    background-color: #ffbf6e;
+    transform: scale(1.15);
+}
+.image-viewer__dot:checked {
+    background-color: $colorBlue;
+}
+
+.portfolio-image {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translate( -50%, 0 );
+}
+
 .selected {
     color: $colorBlue;
 }
@@ -300,18 +407,34 @@ main {
         }
     }
 
-    // .specific-content {
-    //     width: 80%;
-    // }
+    .specific-content {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
 
     .portfolio {
-        
-
         &__item {
 
             &__info {
                 bottom: 0;
             }
+        }
+    }
+
+    .portfolio-image-viewer {
+        &__container {
+            aspect-ratio: auto;
+            height: 560px;
+        }
+    }
+
+    .carousel {
+        &__slider {
+            aspect-ratio: auto;
+        }
+
+        &__slide {
+            aspect-ratio: auto;
         }
     }
 }
@@ -333,7 +456,7 @@ main {
 }
 
 @media (max-width: 522px) {
-    $fontSizeText: 10px;
+    $fontSizeText: 12px;
     $fontSizeTitle: 14px;
 
     h1, h2, h3 {

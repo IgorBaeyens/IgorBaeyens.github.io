@@ -1,65 +1,80 @@
 [
         {
             "id": 1,
-            "name": "Zel Kanis",
+            "title": "Zel Kanis",
             "type": "Persona",
             "date": "Nov 8, 2022",
-            "thumbnail": "assets/images/ref-sheet_zel.png",
             "twitter": {
                 "name": "@KanisZel",
                 "link": "https://twitter.com/kaniszel"
+            },
+            "images": {
+                "image1": "assets/images/ref-sheet_zel.png",
+                "image2": "assets/images/ref-sheet_zel.png"
             },
             "showcase": "https://www.youtube-nocookie.com/embed/NZtECxb3oRM",
             "tracking": ""
         },
         {
             "id": 2,
-            "name": "Ninomae Ina'nis",
+            "title": "Ninomae Ina'nis",
             "type": "Fan-art",
             "date": "Nov 29, 2022",
-            "thumbnail": "assets/images/ref-sheet_ina.png",
             "twitter": {
                 "name": "@ninomaeinanis",
                 "link": "https://twitter.com/ninomaeinanis"
+            },
+            "images": {
+                "image1": "assets/images/ref-sheet_ina.png",
+                "image2": "assets/images/ref-sheet_ina.png"
             },
             "showcase": "https://www.youtube-nocookie.com/embed/o_fyoxY5Agc",
             "tracking": "https://www.youtube-nocookie.com/embed/84DhdzhEODk"
         },
         {
             "id": 3,
-            "name": "Star Hopper Galaxy",
+            "title": "Star Hopper Galaxy",
             "type": "Commission",
             "date": "Mar 18, 2023",
-            "thumbnail": "assets/images/ref-sheet_star.png",
             "twitter": {
                 "name": "@StarHopperGalax",
                 "link": "https://twitter.com/StarHopperGalax"
+            },
+            "images": {
+                "image1": "assets/images/ref-sheet_star.png",
+                "image2": "assets/images/ref-sheet_star.png"
             },
             "showcase": "https://www.youtube-nocookie.com/embed/-vNrGJM6aXM",
             "tracking": "https://www.youtube-nocookie.com/embed/qd6y_UibH0M"
         },
         {
             "id": 4,
-            "name": "Preji Leviathan",
+            "title": "Preji Leviathan",
             "type": "Commission",
             "date": "Jun 1, 2023",
-            "thumbnail": "assets/images/ref-sheet_preji.png",
             "twitter": {
                 "name": "@PrejiLeviathanV",
                 "link": "https://twitter.com/PrejiLeviathanV"
+            },
+            "images": {
+                "image1": "assets/images/ref-sheet_preji.png",
+                "image2": "assets/images/ref-sheet_preji.png"
             },
             "showcase": "",
             "tracking": ""
         },
         {
             "id": 5,
-            "name": "Zel Kanis V2",
+            "title": "Zel Kanis V2",
             "type": "Persona",
             "date": "Jul 12, 2023",
-            "thumbnail": "assets/images/thumbnail_zel.png",
             "twitter": {
                 "name": "@KanisZel",
                 "link": "https://twitter.com/KanisZel"
+            },
+            "images": {
+                "image1":"assets/images/thumbnail_zel.png",
+                "image2": "assets/images/ref-sheet_zel.png"
             },
             "showcase": "https://www.youtube-nocookie.com/embed/wRGGqj-_oWU",
             "tracking": "https://www.youtube-nocookie.com/embed/6_BbtmGx7bM"
