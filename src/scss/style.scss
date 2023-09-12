@@ -46,6 +46,7 @@ html, body {
     margin: 0;
     overflow-x: hidden;
     color: $colorWhite;
+    min-height: 110%;
     
 }
 
@@ -99,7 +100,7 @@ main {
     display: none;
     opacity: 0;
     z-index: $layerPortraitMenu;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: #000000d2;
@@ -215,9 +216,13 @@ main {
 .specific-content {
     // width: 100%;
     max-width: 1000px;
+    // height: 100%;
+    overflow-y: clip;
+    // overflow-x: visible;
     // padding: 0px 40px;
     // margin: 0px 4% 40px;
     margin: 30px auto 40px;
+    position: relative;
 }
 
 .portfolio {
@@ -284,7 +289,12 @@ main {
 }
 
 .portfolio-image-viewer {
-    
+    display: none;
+    opacity: 0;
+    // position: absolute;
+    // top: 0;
+    padding-top: 20px;
+    width: 100%;
 
     &__container {
         position: relative;
@@ -334,8 +344,9 @@ main {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        // width: 100%;
+        width: 100%;
         height: 100%;
+        aspect-ratio: 16 / 9;
     }
     
 
@@ -351,7 +362,7 @@ main {
 .image-viewer__dots {
     display: flex;
     position: absolute;
-    bottom: -2%;
+    bottom: -3%;
     left: 50%;
     transform: translate(-50%, 0);
     width: 60%;
@@ -380,7 +391,8 @@ main {
     position: absolute;
     height: 100%;
     left: 50%;
-    transform: translate( -50%, 0 );
+    top: 50%;
+    transform: translate( -50%, -50% );
 }
 
 .selected {
@@ -399,12 +411,15 @@ main {
     }
 
     .header {
+        // position: fixed;
         justify-content: center;
 
         &__menu {
             display: none;
             
         }
+
+        
     }
 
     .specific-content {
@@ -423,14 +438,21 @@ main {
 
     .portfolio-image-viewer {
         &__container {
-            aspect-ratio: auto;
-            height: 560px;
+            aspect-ratio: 1 / 1;
+            // height: 560px;
         }
+    }
+
+    .portfolio-image {
+        height: auto;
+        width: 100%;
     }
 
     .carousel {
         &__slider {
-            aspect-ratio: auto;
+            // aspect-ratio: auto;
+            // width: 100%;
+            // height: auto;
         }
 
         &__slide {

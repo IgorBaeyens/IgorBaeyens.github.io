@@ -74,7 +74,9 @@
             },
             "images": {
                 "image1":"assets/images/thumbnail_zel.png",
-                "image2": "assets/images/ref-sheet_zel.png"
+                "image2": "assets/images/ref-sheet_preji.png",
+                "image3": "assets/images/ref-sheet_star.png",
+                "image4": "assets/images/ref-sheet_zel.png"
             },
             "showcase": "https://www.youtube-nocookie.com/embed/wRGGqj-_oWU",
             "tracking": "https://www.youtube-nocookie.com/embed/6_BbtmGx7bM"

@@ -26,6 +26,7 @@ html, body {
   margin: 0;
   overflow-x: hidden;
   color: #f8f8f8;
+  min-height: 110%;
 }
 
 h1, h2, h3 {
@@ -75,7 +76,7 @@ main {
   display: none;
   opacity: 0;
   z-index: 30;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8235294118);
@@ -176,7 +177,9 @@ main {
 
 .specific-content {
   max-width: 1000px;
+  overflow-y: clip;
   margin: 30px auto 40px;
+  position: relative;
 }
 
 .portfolio__items {
@@ -232,6 +235,12 @@ main {
   transform: translate(-50%, 0) scale(1.1);
 }
 
+.portfolio-image-viewer {
+  display: none;
+  opacity: 0;
+  padding-top: 20px;
+  width: 100%;
+}
 .portfolio-image-viewer__container {
   position: relative;
   width: 100%;
@@ -275,7 +284,9 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 100%;
   height: 100%;
+  aspect-ratio: 16/9;
 }
 .carousel__slide {
   position: relative;
@@ -286,7 +297,7 @@ main {
 .image-viewer__dots {
   display: flex;
   position: absolute;
-  bottom: -2%;
+  bottom: -3%;
   left: 50%;
   transform: translate(-50%, 0);
   width: 60%;
@@ -318,7 +329,8 @@ main {
   position: absolute;
   height: 100%;
   left: 50%;
-  transform: translate(-50%, 0);
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .selected {
@@ -348,11 +360,11 @@ main {
     bottom: 0;
   }
   .portfolio-image-viewer__container {
-    aspect-ratio: auto;
-    height: 560px;
+    aspect-ratio: 1/1;
   }
-  .carousel__slider {
-    aspect-ratio: auto;
+  .portfolio-image {
+    height: auto;
+    width: 100%;
   }
   .carousel__slide {
     aspect-ratio: auto;
