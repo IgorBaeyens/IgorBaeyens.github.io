@@ -9,6 +9,7 @@ let imageViewerInfo = document.getElementsByClassName("portfolio-image-viewer__i
 let carouselSlider = document.getElementsByClassName("carousel__slider")[0]
 let carouselDots = document.getElementsByClassName("image-viewer__dots")[0]
 let portfolioItems
+let carouselSlideWidth
 
 const addPortfolioLogic = () => {
     async function requestData() {
@@ -98,6 +99,7 @@ const addPortfolioLogic = () => {
         carouselSlider.innerHTML = htmlItemSlides
         carouselDots.innerHTML = htmlCarouselDots
     }
+
     const addCarouselLogic = () => {
         let carouselDotElems = document.getElementsByClassName("image-viewer__dot")
         let carouselSlide = document.getElementsByClassName("carousel__slide")[0]
@@ -107,16 +109,19 @@ const addPortfolioLogic = () => {
                 gsap.to(carouselSlider, {translateX: 0, duration: 0.05})
             }
             dotElem.addEventListener('change', (event) => {
-                let imageWidth = parseInt(window.getComputedStyle(carouselSlide).width) 
+                carouselSlideWidth = parseInt(window.getComputedStyle(carouselSlide).width) 
 
                 if (event.target.value == "image-1") {
                     gsap.to(carouselSlider, {translateX: 0})
                 } else {
-                    gsap.to(carouselSlider, {translateX: -imageWidth * (dotElem.value.replace(/\D/g,'') - 1)})
+                    gsap.to(carouselSlider, {translateX: -carouselSlideWidth * (dotElem.value.replace(/\D/g,'') - 1)})
                 }
             })
         }
     }
+
+    
+
     const addItemViewerInfo = (portfolioItem) => {
         let htmlItemViewerInfo = ``
         htmlItemViewerInfo = `

@@ -390,6 +390,9 @@ main {
     font-family: "Jura";
     font-size: 12px;
   }
+  .scrolling-title__text {
+    font-size: 60px;
+  }
 }
 /*///////////*/
 /*///////////*/

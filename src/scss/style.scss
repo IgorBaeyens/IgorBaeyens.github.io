@@ -480,6 +480,7 @@ main {
 @media (max-width: 522px) {
     $fontSizeText: 12px;
     $fontSizeTitle: 14px;
+    $fontSizeLarge: 60px;
 
     h1, h2, h3 {
         font-family: 'K2D';
@@ -489,6 +490,15 @@ main {
     p, li {
         font-family: 'Jura';
         font-size: $fontSizeText;
+    }
+
+    .scrolling-title {
+
+    
+        &__text {
+
+            font-size: $fontSizeLarge;
+        }
     }
 }
 
