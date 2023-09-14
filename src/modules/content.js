@@ -72,17 +72,18 @@ function CreatePortfolioItems(portfolioData) {
 
 
 const prices = {
-    startingPriceMin: "600 EU",
-    startingPriceMax: "850 EU",
-    vsfAndVrm: "150 EU",
-    baseModel: "125 EU",
-    ARKit: "75 EU",
-    accessoryMin: "50 EU",
-    accessoryMax: "100 EU",
-    expressionMin: "15 EU",
-    expressionMax: "30 EU",
+    startingPriceMin: "800 EU",
+    startingPriceMax: "1200 EU",
+    vrm: "150 EU",
+    vsf: "200 EU",
+    baseModel: "150 EU",
+    ARKit: "100 EU",
+    expressionMin: "20 EU",
+    expressionMax: "40 EU",
     outfitMin: "200 EU",
-    outfitMax: "400 EU"
+    outfitMax: "400 EU",
+    NDA: "10%",
+    commercialUse: "40%"
 }
 
 const termPeriods = {
@@ -98,21 +99,23 @@ const text = {
         <h1>Prices</h1>
         <p><b>The starting price for a commission ranges from <mark>${prices.startingPriceMin}</mark> to <mark>${prices.startingPriceMax}</mark>. This includes:</b></p>
         <ul>
-            <li>character in FBX format (rigged as Unity humanoid when needed)</li>
+            <li>character in FBX format (rigged as humanoid for tracking when needed)</li>
             <li>The blender file included with animation rig</li>
             <li>Folder with textures</li>
-            <li>5 blendshape expressions (neutral, happy, angry, sad, smug)</li>
+            <li>6 blendshape expressions (neutral, happy, angry, sad and 2 custom ones)</li>
             <li>viseme blendshapes for audio based mouth movement</li>
         </ul>
         <br><br>
         <p><b>Following things can be added on top:</b></p>
         <ul>
-            <li>VRM and VSF format with physics for vtubing: <mark>${prices.vsfAndVrm}</mark></li>
-            <li>textured and rigged base model: <mark>${prices.baseModel}</mark></li>
+            <li>VRM format for vtubing (more used but less quality and features): <mark>${prices.vrm}</mark></li>
+            <li>VSF format for vtubing (less used but more quality and features): <mark>${prices.vsf}</mark></li>
+            <li>textured and rigged base model (makes it easier to add future outfits): <mark>${prices.baseModel}</mark></li>
             <li>ARkit blendshapes: <mark>${prices.ARKit}</mark></li>
-            <li>extra toggleable accessories  (glasses, hat, etc): <mark>${prices.accessoryMin}</mark>~<mark>${prices.accessoryMax}</mark> each</li>
             <li>extra expressions: <mark>${prices.expressionMin}</mark>~<mark>${prices.expressionMax}</mark> each</li>
             <li>extra outfits: <mark>${prices.outfitMin}</mark>~<mark>${prices.outfitMax}</mark> each</li>
+            <li>Non Disclosure Agreement: <mark>${prices.NDA}</mark> of the commission price</li>
+            <li>Commercial Use: <mark>${prices.commercialUse}</mark> of the commission price</li>
         </ul>
         <p>Be sure to add more references if you want an extra outfit or accessory. Otherwise i cannot accurately create what you want me to.</p>
         <br><br><br>
@@ -147,7 +150,7 @@ const text = {
         <p><b>Important</b></p>
         <p>
             In order to accurately model your character i need a <mark>reference sheet</mark>. The reference sheet 
-            should have a front view and a back view of your character. A side view and more views of detailed or ambigious spots are very welcome.
+            should have a front view and a back view of your character. A side view and more views of detailed or ambigious spots are very welcome. I do not do NSFW work of any kind.
         </p>
         <br><br>
         <p>
@@ -172,32 +175,62 @@ const text = {
         <h1>Terms Of Service</h1>
         <p>By commissioning me you agree to the following terms:</p>
         <br>
-        <p><b>General</b></p>
-        <Ul>
-            <li><mark>a commission is considered started when</mark> the client has paid 50% of the Paypal invoice price</li>
-            <li><mark>a commission is finished when</mark> the client has seen that the product works as advertised and has received a zip folder containing the agreed upon files of the character</li>
-            <li>a commission can take up to <mark>${termPeriods.commPeriodMonths} months</mark> time (<mark>${termPeriods.commPeriodDays} days</mark>)</li>
-            <li>I will send <mark>updates</mark> after completing following stages of the commission: modelling the base, modelling the outfit and hair, texturing, rigging, creating all of the blendshapes and converting the character to vrm and vsf format </li>
-            <li>there is no set limit on <mark>revisions</mark>. However, i do not see big changes that deviate from the originally given reference as a revision</li>
-            <li><mark>re-selling</mark> of the commission files or it’s contents is not allowed by either me or the client</li>
-            <li><mark>i am allowed to post updates and make WIP posts</mark> on social media and show the end result on my portfolio., <mark>unless</mark> the client specifies through the Google Form they want me to wait until they themselves reveal the 3D model.
-                <br><br>
-                If the client wants me to wait they get <mark>another ${termPeriods.revealDelayPeriod} day period</mark> to reveal the model after the commission is finished. When this period ends or the client has revealed the 3D model, I am allowed to post about the commission on social media and my portfolio
-            </li>
-        </Ul>
-        <br><br>
-        <p><b>Payment</b></p>
+        <p><b>GENERAL</b></p>
         <ul>
-            <li>payment is in euro through <mark>Paypal invoice</mark></li>
-            <li>50% of the payment will be paid upfront</li>
-            <li>the commission files will be given to the client after they paid the other 50%</li>
+            <li><mark>The client is 18+</mark> and legally able to commit to an agreement <mark>or has a legal guardian</mark> to make this agreement on their behalf.</li>
+            <li>The client grants to the artist <mark>non-exclusive rights to replicate</mark> Client's own character design, reference materials or assets for the commission.</li>
+            <li>The client warrants that the character design, reference material and other intellectual property provided to the artist are <mark>legally obtained and authorised</mark> for use by the Client.</li>
+            <li>The artist warrants that they will <mark>not copy or heavily reference</mark> unauthorised materials.</li>
+            <li>A commission is <mark>considered started</mark> when the client has paid 50% of the invoice price.</li>
+            <li>A commission is <mark>considered finished</mark> when the client has received the final files.</li>
+            <li><mark>Communication</mark> will be held either via Twitter DM or Discord</li>
         </ul>
-        <br><br>
-        <p><b>Refunding</b></p>
+        <br>
+        <p><b>TIMELINE AND PROCESS</b></p>
         <ul>
-            <li>if <mark>I cancel the commission</mark> the client will be fully refunded</li>
-            <li>if <mark>the client cancels after the commission has started</mark> they will be refunded based on the amount of work completed
-            <li>no refunds will be issued <mark>after the commission is finished</mark></li>
+            <li>A commission can take up to <mark>2 months(62 days)</mark> time</li>
+            <li>A commission consists of <mark>several possible stages:</mark> modelling the body, modelling the hair, modelling the outfit, texturing the character, rigging the character, creating the blendshapes, and vtuber conversion. <mark>After each stage</mark> the artist will send an update.</li>
+            <li>If a stage <mark>takes more than a week</mark> the client will be given an update, regardless of whether the stage is finished or not.</li>
+            <li>If the client <mark>does not respond after 2 days</mark> of being given an update the artist is within their right to move on to the next stage.</li>
+        </ul>
+        <br>
+        <p><b>REVISIONS</b></p>
+        <ul>
+            <li>After each update the client can give feedback and is <mark>allowed to ask for revisions.</mark></li>
+            <li>There is no set limit on revisions. But it is <mark>not unlimited</mark> and changes that deviate from the originally agreed upon design are <mark>not seen as a revision.</mark></li>
+            <li>If the client does request <mark>a change that wasn't originally planned,</mark> a fee will be proposed by the artist that represents the time and effort needed for that change.</li>
+        </ul>
+        <br>
+        <p><b>DELIVERY</b></p>
+        <ul>
+            <li>the client acknowledges that <mark>the deliverables are digital</mark> and that there are no physically shipped goods to receive.</li>
+            <li>The final files will be <mark>delivered after the last 50%</mark> of the invoice is paid.</li>
+            <li>The final files will be <mark>delivered as a .RAR file via mail.</mark> If the file size is too big it will be uploaded on WeTransfer and a private link for download will be sent via mail instead.</li>
+            <li>The artist is not in any way held responsible <mark>if the client loses their final files</mark> after the commission is finished.</li>
+            <li><mark>After the commission</mark> is finished the client has one week to ask for one more free revision. this revision is <mark>only to resolve potential bugs and problems</mark> that the artist might have initially overlooked.</li>
+        </ul>
+        <br>
+        <p><b>PAYMENTS</b></p>
+        <ul>
+            <li>Prices are <mark>in EU(euro)</mark>, and paid via Paypal invoice.</li>
+            <li>The client warrants they will not issue chargebacks and that they <mark>will follow the refund policy</mark> mentioned in the Terms Of Service.</li>
+        </ul>
+        <br>
+        <p><b>INTELLECTUAL PROPERTY RIGHTS</b></p>
+        <ul>
+            <li><mark>The artist retains</mark> copyright, ownership and intellectual property rights. Which includes but is not limited to the display and advertising of the commission on websites and social media.</li>
+            <li><mark>If the client want's an NDA,</mark> a 10% fee will be added on top of the initial invoice price. After the client has revealed the commission contents, the NDA comes to a close and the artist is once more allowed to display and advertise the commission.</li>
+            <li>The client receives exclusive, non-transferable usage rights.</li>
+            <li>The client does not hold commercial rights unless given by the artist. <mark>If the client want's commercial rights,</mark> a 40% fee will be added on top of the initial invoice price.</li>
+            <li>The client is <mark>allowed to</mark> use the commission for monetized streaming. The client is <mark>not allowed to</mark> sell the commission contents, use the contents for merchandise or make the contents publicly available unless given commercial rights.</li>
+        </ul>
+        <br>
+        <p><b>REFUNDS</b></p>
+        <ul>
+            <li>A commission may take up to 2 months(62 days) time. <mark>If these 2 months have passed</mark> the client has the right to a full refund if requested.</li>
+            <li><mark>If the artist cancels</mark> the commission the client will be fully refunded.</li>
+            <li><mark>If the client cancels</mark> after the commission has started they will be refunded based on the amount of work completed. At least a minimum of 100 euro will be kept by the artist as reimbursement.</li>
+            <li>No refunds will be issued <mark>after the commission</mark> is finished.</li>
         </ul>
     `,
     faq: `
