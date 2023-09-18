@@ -9,11 +9,10 @@
                 "link": "https://twitter.com/kaniszel"
             },
             "images": {
-                "image1": "assets/images/ref-sheet_zel.png",
-                "image2": "assets/images/ref-sheet_zel.png"
-            },
-            "showcase": "https://www.youtube-nocookie.com/embed/NZtECxb3oRM",
-            "tracking": ""
+                "image1": "assets/images/zel_thumbnail.png",
+                "image2": "assets/images/zel_ref-sheet.png",
+                "image3": "assets/images/zel_showcase.mp4"
+            }
         },
         {
             "id": 2,
@@ -25,11 +24,9 @@
                 "link": "https://twitter.com/ninomaeinanis"
             },
             "images": {
-                "image1": "assets/images/ref-sheet_ina.png",
-                "image2": "assets/images/ref-sheet_ina.png"
-            },
-            "showcase": "https://www.youtube-nocookie.com/embed/o_fyoxY5Agc",
-            "tracking": "https://www.youtube-nocookie.com/embed/84DhdzhEODk"
+                "image1": "assets/images/ina_thumbnail.png",
+                "image2": "assets/images/ina_ref-sheet.png"
+            }
         },
         {
             "id": 3,
@@ -41,11 +38,10 @@
                 "link": "https://twitter.com/StarHopperGalax"
             },
             "images": {
-                "image1": "assets/images/ref-sheet_star.png",
-                "image2": "assets/images/ref-sheet_star.png"
-            },
-            "showcase": "https://www.youtube-nocookie.com/embed/-vNrGJM6aXM",
-            "tracking": "https://www.youtube-nocookie.com/embed/qd6y_UibH0M"
+                "image1": "assets/images/star_thumbnail.png",
+                "image2": "assets/images/star_ref-sheet.png",
+                "image3": "assets/images/star_showcase.mp4"
+            }
         },
         {
             "id": 4,
@@ -57,11 +53,11 @@
                 "link": "https://twitter.com/PrejiLeviathanV"
             },
             "images": {
-                "image1": "assets/images/ref-sheet_preji.png",
-                "image2": "assets/images/ref-sheet_preji.png"
-            },
-            "showcase": "",
-            "tracking": ""
+                "image1": "assets/images/preji_thumbnail.png",
+                "image2": "assets/images/preji_ref-sheet.png",
+                "image3": "assets/images/preji_showcase.mp4",
+                "image4": "assets/images/preji_tracking.mp4"
+            }
         },
         {
             "id": 5,
@@ -73,12 +69,27 @@
                 "link": "https://twitter.com/KanisZel"
             },
             "images": {
-                "image1":"assets/images/thumbnail_zel.png",
-                "image2": "assets/images/ref-sheet_preji.png",
-                "image3": "assets/images/ref-sheet_star.png",
-                "image4": "assets/images/ref-sheet_zel.png"
+                "image1": "assets/images/zel-v2_thumbnail.png",
+                "image2": "assets/images/zel-v2_ref-sheet.png",
+                "image3": "assets/images/zel-v2_turntable.mp4",
+                "image4": "assets/images/zel-v2_turntable_wire.mp4"
+            }
+        },
+        {
+            "id": 6,
+            "title": "Servo Skull",
+            "type": "Commission",
+            "date": "Sep 15, 2023",
+            "twitter": {
+                "name": "@adeptus_dankus",
+                "link": "https://twitter.com/adeptus_dankus"
             },
-            "showcase": "https://www.youtube-nocookie.com/embed/wRGGqj-_oWU",
-            "tracking": "https://www.youtube-nocookie.com/embed/6_BbtmGx7bM"
+            "images": {
+                "image1": "assets/images/devon_thumbnail.png",
+                "image2": "assets/images/devon_ref-sheet.png",
+                "image3": "assets/images/devon_showcase.mp4",
+                "image4": "assets/images/devon_tracking.mp4",
+                "image5": "assets/images/devon_wireframe.png"
+            }
         }
     ]

@@ -57,6 +57,11 @@ a {
   color: #f8f8f8;
 }
 
+input {
+  appearance: none;
+  margin: 0;
+}
+
 main {
   width: 100%;
 }
@@ -191,7 +196,6 @@ main {
 .portfolio__item {
   cursor: pointer;
   position: relative;
-  border-radius: 3%;
   overflow: hidden;
   aspect-ratio: 1/1;
 }
@@ -199,7 +203,6 @@ main {
   position: absolute;
   transition: 0.3s;
   height: 100%;
-  border-radius: 15px;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -305,13 +308,11 @@ main {
 }
 
 .image-viewer__dot {
-  appearance: none;
   cursor: pointer;
   transition: 0.2s;
   width: 5%;
   box-shadow: 0px 0px 8px 0px #000000;
   aspect-ratio: 1/1;
-  margin: 0;
   border-radius: 100%;
   background-color: white;
 }
@@ -331,6 +332,16 @@ main {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.comm_tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.comm_tabs input {
+  display: none;
 }
 
 .selected {

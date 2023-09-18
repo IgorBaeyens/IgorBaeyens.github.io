@@ -86,9 +86,20 @@ const addPortfolioLogic = () => {
         let i = 1
         let itemImages = Object.values(portfolioItem.images)
         itemImages.forEach((image) => {
+            console.log(image.includes(".mp4"))
+            let htmlSlide
+            if (image.includes(".mp4")) {
+                htmlSlide = `
+                    <video class="portfolio-image" src="${image}" type="video/mp4" loop controls></video>
+                `
+            } else {
+                htmlSlide = `
+                    <img class="portfolio-image" src="${image}" alt="">
+                `
+            }
             htmlItemSlides += `
                 <div class="carousel__slide">
-                    <img class="portfolio-image" src="${image}" alt="">
+                    ${htmlSlide}
                 </div>
             `
             htmlCarouselDots += `
