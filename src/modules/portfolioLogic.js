@@ -16,18 +16,18 @@ const addPortfolioLogic = () => {
         let response = await fetch("assets/data/portfolio.json")
         let portfolioData = await response.json()
     
-        createPortolioItemElems(portfolioData)
+        addPortfolioItemElems(portfolioData)
         
     }
     requestData()
     
-    const createPortolioItemElems = (portfolioData) => {
+    const addPortfolioItemElems = (portfolioData) => {
         let htmlPortfolioItems = ``
         for (const portfolioItem of portfolioData) {
             htmlPortfolioItems += `
-            <div class="portfolio__item">
-                <img class="portfolio__item__thumbnail" src="${portfolioItem.images.image1}" alt="">
-                <div class="portfolio__item__info">
+            <div class="portfolio__item item">
+                <img class="portfolio__item__thumbnail item__thumbnail" src="${portfolioItem.images.image1}" alt="">
+                <div class="portfolio__item__info item__info">
                     <h1 class="portfolio__item__title">${portfolioItem.title}</h1>
                     <p class="portfolio__item__type">${portfolioItem.type}</p>
                     <p class="portfolio__item__date">${portfolioItem.date}</p>
@@ -38,7 +38,6 @@ const addPortfolioLogic = () => {
         portfolio.innerHTML = htmlPortfolioItems
 
         addImageViewer(portfolioData)
-
     }
 
     const addImageViewer = (portfolioData) => {
@@ -49,16 +48,13 @@ const addPortfolioLogic = () => {
                 let itemElementTitle = event.currentTarget.getElementsByClassName("portfolio__item__title")[0].textContent
                 for (const portfolioItem of portfolioData) {
                     if (itemElementTitle == portfolioItem.title) {
-                        imageViewerAnimation.play()
+                        slideUpAnimationTmln.play()
 
                         addCarouselImages(portfolioItem)
                         
                         addItemViewerInfo(portfolioItem)
                         
                         addCarouselLogic()
-
-                        // imageViewer.style.display = "block"
-                        
                     }
                 }
                 
@@ -66,19 +62,16 @@ const addPortfolioLogic = () => {
         }
 
        imageViewerClose.addEventListener('click', () => {
-            // portfolio.style.display = "grid"
-            
-            imageViewerAnimation.reverse()
+            slideUpAnimationTmln.reverse()
        })
     }
 
-    // TODO add animation
-    let imageViewerAnimation = gsap.timeline()
-    imageViewerAnimation.to(portfolio, {opacity: 0, duration: 0.2, ease: "Power1.easeInOut"})
-    imageViewerAnimation.to(portfolio, {display: "none", duration: 0})
-    imageViewerAnimation.to(imageViewer, {display: "block", duration: 0})
-    imageViewerAnimation.fromTo(imageViewer, {opacity: 0, translateY: 100, duration: 0.8, ease: "Power1.easeInOut"}, {opacity: 1, translateY: 0})
-    imageViewerAnimation.paused(true)
+    let slideUpAnimationTmln = gsap.timeline()
+    slideUpAnimationTmln.to(portfolio, {opacity: 0, duration: 0.2, ease: "Power1.easeInOut"})
+    slideUpAnimationTmln.to(portfolio, {display: "none", duration: 0})
+    slideUpAnimationTmln.to(imageViewer, {display: "block", duration: 0})
+    slideUpAnimationTmln.fromTo(imageViewer, {opacity: 0, translateY: 100, duration: 0.8, ease: "Power1.easeInOut"}, {opacity: 1, translateY: 0})
+    slideUpAnimationTmln.paused(true)
 
     const addCarouselImages = (portfolioItem) => {
         let htmlItemSlides = ``
@@ -86,7 +79,6 @@ const addPortfolioLogic = () => {
         let i = 1
         let itemImages = Object.values(portfolioItem.images)
         itemImages.forEach((image) => {
-            console.log(image.includes(".mp4"))
             let htmlSlide
             if (image.includes(".mp4")) {
                 htmlSlide = `

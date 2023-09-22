@@ -55,9 +55,14 @@ h1, h2, h3 {
     font-size: $fontSizeTitle;
     margin: 0;
 }
-p, li {
+label, p, li {
     font-family: 'Jura';
     font-size: $fontSizeText;
+}
+
+mark {
+    background: none;
+    color: $colorBlue;
 }
 
 p {
@@ -84,6 +89,15 @@ input {
 
 main {
     width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 14px;
+    opacity: 0.5;
+}
+footer p {
+    font-size: 12px;
 }
 
 .background {
@@ -221,6 +235,56 @@ main {
     position: relative;
 }
 
+.items {
+    display: grid;
+}
+
+.item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &__thumbnail {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    &__info {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0px -80px 50px -40px #090b14;
+    }
+}
+
+//////////
+// news //
+//////////
+
+.news {
+    &__items {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 14px;
+        row-gap: 14px;
+    }
+
+    &__item {
+        aspect-ratio: 16 / 9;
+
+        &__thumbnail {
+            width: 100%;
+        }
+
+        &__title {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
 ///////////////
 // portfolio //
 ///////////////
@@ -228,36 +292,23 @@ main {
 .portfolio {
 
     &__items {
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         column-gap: 8px;
         row-gap: 8px;
     }
 
     &__item {
-        cursor: pointer;
-        position: relative;
-        // border-radius: 3%;
-        overflow: hidden;
+        
         aspect-ratio: 1 / 1;
 
         &__thumbnail {
-            position: absolute;
-            // transform-origin: 50% 50%;
             transition: 0.3s;
             height: 100%;
-            // border-radius: 15px;
-            left: 50%;
-            transform: translate(-50%, 0);
         }
 
         &__info {
-            position: absolute;
             transition: 0.3s;
             bottom: -50%;
-            width: 100%;
-            height: 100%;
-            box-shadow: inset 0px -80px 50px -40px #090b14;
         }
 
         &__title {
@@ -290,8 +341,6 @@ main {
 .portfolio-image-viewer {
     display: none;
     opacity: 0;
-    // position: absolute;
-    // top: 0;
     padding-top: 20px;
     width: 100%;
 
@@ -299,7 +348,7 @@ main {
         position: relative;
         width: 100%;
         aspect-ratio: 16 / 9;
-        
+       
     }
 
     &__close-button {
@@ -337,6 +386,7 @@ main {
     overflow: hidden;
     border-radius: 14px;
     background-color: #060c22;
+    
     height: 100%;
 
     &__slider {
@@ -351,10 +401,9 @@ main {
 
     &__slide { 
         position: relative;
-        // width: 300px;
-        // aspect-ratio: 16/9;
         width: 100%;
         height: 100%;
+        
     }
 }
 
@@ -371,7 +420,7 @@ main {
 .image-viewer__dot {
     cursor: pointer;
     transition: 0.2s;
-    width: 5%;
+    width: 30px;
     box-shadow: 0px 0px 8px 0px #000000;
     aspect-ratio: 1 / 1;
     border-radius: 100%;
@@ -391,21 +440,68 @@ main {
     left: 50%;
     top: 50%;
     transform: translate( -50%, -50% );
-    // image-rendering: -webkit-optimize-contrast;
-    // image-rendering: pixelated;
+    // border: 4px solid #060c22 ;
+    
 }
 
 ////////////////
 // commission //
 ////////////////
 
-.comm_tabs {
+.commission {
+    // display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comm__tabs {
     display: flex;
     justify-content: space-between;
+    margin: auto;
     width: 50%;
 }
-.comm_tabs input {
+
+.comm__tabs input {
     display: none;
+}
+
+.comm__tab {
+    cursor: pointer;
+    // width: 25%;
+    // text-align: center;
+    transition: 0.3s;
+}
+.comm__tab:hover {
+    color: $colorYellow;
+    letter-spacing: 0.5em;
+}
+.comm__tabs input:checked + .comm__tab {
+    color: $colorBlue;
+}
+
+.comm__text {
+    line-height: 22px;
+}
+
+.comm__text ul {
+    margin: 0 0 0 20px;
+} 
+.comm__text li {
+    position: relative;
+    padding-left: 20px;
+}
+.comm__text li:before {
+    content: "·";
+    font-size: 40px;
+    position: absolute;
+    line-height: 0;
+    left: 6px;
+    top: 8px;
+    color: $colorBlue;
+}
+
+.comm__text h1 {
+    margin: 40px 0 20px;
 }
 
 .selected {
@@ -512,6 +608,22 @@ main {
 
             font-size: $fontSizeLarge;
         }
+    }
+
+    ///////////////
+    // portfolio //
+    ///////////////
+
+    .image-viewer__dot {
+        width: 18px;
+    }
+
+    ////////////////
+    // commission //
+    ////////////////
+    
+    .comm__tabs {
+        width: 100%;
     }
 }
 
