@@ -72,7 +72,9 @@
                 "image1": "assets/images/zel-v2_thumbnail.png",
                 "image2": "assets/images/zel-v2_ref-sheet.png",
                 "image3": "assets/images/zel-v2_turntable.mp4",
-                "image4": "assets/images/zel-v2_turntable_wire.mp4"
+                "image4": "assets/images/zel-v2_head-shot.mp4",
+                "image5": "assets/images/zel-v2_in-game.mp4",
+                "image6": "assets/images/zel-v2_turntable_wire.mp4"
             }
         },
         {
