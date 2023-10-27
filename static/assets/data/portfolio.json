@@ -93,5 +93,20 @@
                 "image4": "assets/images/devon_tracking.mp4",
                 "image5": "assets/images/devon_wireframe.png"
             }
+        },
+        {
+            "id": 7,
+            "title": "Star Hopper Galaxy (coat)",
+            "type": "Commission",
+            "date": "Oct 27, 2023",
+            "twitter": {
+                "name": "@StarHopperGalax",
+                "link": "https://twitter.com/StarHopperGalax"
+            },
+            "images": {
+                "image1": "assets/images/star_coat_thumbnail.png",
+                "image2": "assets/images/star_coat_ref-sheet.png",
+                "image3": "assets/images/star_coat_showcase.mp4"
+            }
         }
     ]

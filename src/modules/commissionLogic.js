@@ -5,7 +5,7 @@ let commHtmlText = document.getElementsByClassName("comm__content")[0]
 let selectedTab
 
 const addCommissionLogic = () => {
-    // commHtmlText.innerHTML = text.prices
+    commHtmlText.innerHTML = text.prices
 
     commTabs.addEventListener('change', (event) => {
 
@@ -26,8 +26,6 @@ let slideUpAnimationTmln = gsap.timeline()
 slideUpAnimationTmln.to(commHtmlText, {opacity: 0, translateY: 100, duration: 0.2, ease: "Power1.easeIn", onComplete: () => {
     commHtmlText.innerHTML = text[selectedTab]
 }})
-// slideUpAnimationTmln.to(commHtmlText, {display: "none", duration: 0})
-// slideUpAnimationTmln.to(commHtmlText, {display: "block", duration: 0})
 slideUpAnimationTmln.to(commHtmlText, {opacity: 1, translateY: 0, duration: 0.8, delay: 0.4, ease: "Power1.easeInOut"})
 slideUpAnimationTmln.paused(true)
 
@@ -162,7 +160,8 @@ const text = {
         </ul>
     `,
     form:`
-        <p>form</p>  
+        <p>Have you read everything and want to commission me? Thank you! Just fill in the form down below and submit. If everything goes well you'll be contacted within one week.</p>
+        <p><a href="https://forms.gle/ZyPk4XVTiTTNDV1U8" target="_blank" class="commission-button">Commission Zel</a></p> 
     `
 }
 

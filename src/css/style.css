@@ -11,6 +11,14 @@
   font-weight: 700;
   src: url("../../static/assets/fonts/k2d-v9-latin-700.woff") format("woff"), url("../../static/assets/fonts/k2d-v9-latin-700.woff2") format("woff2"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* k2d-700italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "K2D_italic";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../../static/assets/fonts/k2d-v11-latin-700italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 /* jura-regular - latin */
 @font-face {
   font-family: "Jura";
@@ -190,10 +198,11 @@ footer p {
 }
 .scrolling-title__text {
   user-select: none;
+  font-family: "K2D_italic";
   font-size: 100px;
   white-space: nowrap;
   color: rgba(255, 255, 255, 0.1450980392);
-  animation: scrollText 30s infinite linear;
+  animation: scrollText 40s infinite linear;
 }
 
 .specific-content {
@@ -399,11 +408,6 @@ footer p {
   transition: 0.3s;
 }
 
-.comm__tab:hover {
-  color: #ffbf6e;
-  letter-spacing: 0.5em;
-}
-
 .comm__tabs input:checked + .comm__tab {
   color: #4ddeff;
 }
@@ -474,7 +478,7 @@ footer p {
   color: #181b29;
   background-color: #f8f8f8;
   padding: 14px 20px;
-  border-radius: 30px;
+  border-radius: 10px;
   transition: 0.2s;
 }
 
@@ -492,6 +496,12 @@ footer p {
 /* responsive */
 /*////////////*/
 /*////////////*/
+@media (hover: hover) {
+  .comm__tab:hover {
+    color: #ffbf6e;
+    letter-spacing: 0.5em;
+  }
+}
 @media (orientation: portrait) {
   .portrait-menu__button {
     display: block;

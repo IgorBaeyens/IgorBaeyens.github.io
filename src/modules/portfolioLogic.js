@@ -16,10 +16,26 @@ const addPortfolioLogic = () => {
         let response = await fetch("assets/data/portfolio.json")
         let portfolioData = await response.json()
     
+        
+
+        portfolioData = sortData(portfolioData)
+
         addPortfolioItemElems(portfolioData)
         
     }
     requestData()
+
+    const sortData = (data) => {
+
+        // newest to oldest
+        data = data.sort((itemOne, itemTwo) => {
+            if(itemOne.id > itemTwo.id) {
+                return -1
+            }
+        })
+
+        return data
+    }
     
     const addPortfolioItemElems = (portfolioData) => {
         let htmlPortfolioItems = ``
