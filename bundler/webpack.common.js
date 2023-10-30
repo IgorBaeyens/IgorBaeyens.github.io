@@ -19,8 +19,29 @@ module.exports = {
             ]
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html'),
-            minify: true
+            filename: 'index.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/index.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'news.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/news.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'portfolio.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/portfolio.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'commission.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/commission.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'contact.html',
+            minify: true,
+            template: path.resolve(__dirname, '../src/pages/contact.html'),
         }),
         new MiniCSSExtractPlugin()
     ],
