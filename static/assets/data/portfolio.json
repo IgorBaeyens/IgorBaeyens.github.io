@@ -1,50 +1,112 @@
 [
         {
             "id": 1,
-            "name": "Zel Kanis",
+            "title": "Zel Kanis",
             "type": "Persona",
-            "thumbnail": "assets/images/ref-sheet_zel.png",
+            "date": "Nov 8, 2022",
             "twitter": {
                 "name": "@KanisZel",
                 "link": "https://twitter.com/kaniszel"
             },
-            "showcase": "https://www.youtube-nocookie.com/embed/NZtECxb3oRM",
-            "tracking": ""
+            "images": {
+                "image1": "assets/images/zel_thumbnail.png",
+                "image2": "assets/images/zel_ref-sheet.png",
+                "image3": "assets/images/zel_showcase.mp4"
+            }
         },
         {
             "id": 2,
-            "name": "Ninomae Ina'nis",
+            "title": "Ninomae Ina'nis",
             "type": "Fan-art",
-            "thumbnail": "assets/images/ref-sheet_ina.png",
+            "date": "Nov 29, 2022",
             "twitter": {
                 "name": "@ninomaeinanis",
                 "link": "https://twitter.com/ninomaeinanis"
             },
-            "showcase": "https://www.youtube-nocookie.com/embed/o_fyoxY5Agc",
-            "tracking": "https://www.youtube-nocookie.com/embed/84DhdzhEODk"
+            "images": {
+                "image1": "assets/images/ina_thumbnail.png",
+                "image2": "assets/images/ina_ref-sheet.png"
+            }
         },
         {
             "id": 3,
-            "name": "Star Hopper Galaxy",
+            "title": "Star Hopper Galaxy",
             "type": "Commission",
-            "thumbnail": "assets/images/ref-sheet_star.png",
+            "date": "Mar 18, 2023",
             "twitter": {
                 "name": "@StarHopperGalax",
                 "link": "https://twitter.com/StarHopperGalax"
             },
-            "showcase": "https://www.youtube-nocookie.com/embed/-vNrGJM6aXM",
-            "tracking": "https://www.youtube-nocookie.com/embed/qd6y_UibH0M"
+            "images": {
+                "image1": "assets/images/star_thumbnail.png",
+                "image2": "assets/images/star_ref-sheet.png",
+                "image3": "assets/images/star_showcase.mp4"
+            }
         },
         {
             "id": 4,
-            "name": "Preji Leviathan",
+            "title": "Preji Leviathan",
             "type": "Commission",
-            "thumbnail": "assets/images/ref-sheet_preji.png",
+            "date": "Jun 1, 2023",
             "twitter": {
                 "name": "@PrejiLeviathanV",
                 "link": "https://twitter.com/PrejiLeviathanV"
             },
-            "showcase": "https://www.youtube-nocookie.com/embed/wRGGqj-_oWU",
-            "tracking": "https://www.youtube-nocookie.com/embed/6_BbtmGx7bM"
+            "images": {
+                "image1": "assets/images/preji_thumbnail.png",
+                "image2": "assets/images/preji_ref-sheet.png",
+                "image3": "assets/images/preji_showcase.mp4",
+                "image4": "assets/images/preji_tracking.mp4"
+            }
+        },
+        {
+            "id": 5,
+            "title": "Zel Kanis V2",
+            "type": "Persona",
+            "date": "Jul 12, 2023",
+            "twitter": {
+                "name": "@KanisZel",
+                "link": "https://twitter.com/KanisZel"
+            },
+            "images": {
+                "image1": "assets/images/zel-v2_thumbnail.png",
+                "image2": "assets/images/zel-v2_ref-sheet.png",
+                "image3": "assets/images/zel-v2_turntable.mp4",
+                "image4": "assets/images/zel-v2_head-shot.mp4",
+                "image5": "assets/images/zel-v2_in-game.mp4",
+                "image6": "assets/images/zel-v2_turntable_wire.mp4"
+            }
+        },
+        {
+            "id": 6,
+            "title": "Servo Skull",
+            "type": "Commission",
+            "date": "Sep 15, 2023",
+            "twitter": {
+                "name": "@adeptus_dankus",
+                "link": "https://twitter.com/adeptus_dankus"
+            },
+            "images": {
+                "image1": "assets/images/devon_thumbnail.png",
+                "image2": "assets/images/devon_ref-sheet.png",
+                "image3": "assets/images/devon_showcase.mp4",
+                "image4": "assets/images/devon_tracking.mp4",
+                "image5": "assets/images/devon_wireframe.png"
+            }
+        },
+        {
+            "id": 7,
+            "title": "Star Hopper Galaxy (coat)",
+            "type": "Commission",
+            "date": "Oct 27, 2023",
+            "twitter": {
+                "name": "@StarHopperGalax",
+                "link": "https://twitter.com/StarHopperGalax"
+            },
+            "images": {
+                "image1": "assets/images/star_coat_thumbnail.png",
+                "image2": "assets/images/star_coat_ref-sheet.png",
+                "image3": "assets/images/star_coat_showcase.mp4"
+            }
         }
     ]
