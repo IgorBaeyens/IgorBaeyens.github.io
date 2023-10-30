@@ -37,7 +37,7 @@ const text = {
             <li>Character in FBX format</li>
             <li>The Blender file included with animation rig</li>
             <li>folder with textures</li>
-            <li>6 blendshapes expressions (neutral, happy, angry, sad and 2 custom ones)</li>
+            <li>6 blendshape expressions (neutral, happy, angry, sad and 2 custom ones)</li>
             <li>viseme blendshapes for audio based mouth movement</li>
         </ul>
         <br>
@@ -58,23 +58,23 @@ const text = {
         <p>For other kinds of commissions please send me an e-mail at zelkanisdayo@gmail.com</p>
     `,
     process: `
-        <p>Making a character in 3D comes in a few stages. I will send out an update when i am done with modelling the body mesh, the hair mesh, the clothing mesh, the texturing, the rigging the blendshapes and the conversion. Detailed here is my general work process!</p>
+        <p>Making a character in 3D comes in a few stages. I will send out an update when i am done with: <mark>1.</mark>modelling the body <mark>2.</mark>modelling the hair <mark>3.</mark>modelling the clothing <mark>4.</mark>texturing the model <mark>5.</mark>rigging the model <mark>6.</mark>creating the blendshapes <mark>7.</mark>vtuber conversion. Detailed here is my general work process!</p>
         <br>
         <div class="comm__content__process">
-            <div class="process__text">
+            <div class="process__text" style="order: 1;">
                 <h1>Modelling the body, hair and clothing</h1>
                 <p>the body of the character will be sculpted in Zbrush either from scratch or from a base. When the client is happy with the result this is afterwards cleaned up through retopology in Blender. The outfit is done in a similar way.</p>    
                 <br>
                 <p>Hair is done through a combination of sculpting and curves depending on the design and reference.</p>
                 <br>
             </div>
-            <div class="process__image-container">
-                <video class="process__image" src="assets/images/devon_showcase.mp4" type="video/mp4" autoplay loop></video>
+            <div class="process__image-container" style="order: 1;">
+                <video class="process__image" src="assets/images/process_sculpting.mp4" type="video/mp4" autoplay loop></video>
             </div>
-            <div class="process__image-container">
-                <video class="process__image" src="assets/images/devon_showcase.mp4" type="video/mp4" autoplay loop></video>
+            <div class="process__image-container process__image-container__left" style="order: 2;">
+                <video class="process__image" src="assets/images/process_rigging.mp4" type="video/mp4" autoplay loop></video>
             </div>
-            <div class="process__text">
+            <div class="process__text process__text__right" style="order: 3;">
                 <h1>Texturing the character</h1>
                 <p>When the sculpting and modelling is done. The texturing process can begin! First all meshes are UV unwrapped. Then they are imported in Substance Painter for baking and texturing.</p>
                 <br>
@@ -82,20 +82,20 @@ const text = {
                 <p>With the use of a 'skeleton' called a rig, the character is able to move. Each mesh is weight painted to the bones of this rig. I use an auto rigger which has the added feature of making a rig that is easy to animate.</p>
                 <br>
             </div>
-            <div class="process__text">
+            <div class="process__text" style="order: 4;">
                 <h1>Character blendshapes</h1>
                 <p>After the rigging i make the blendshapes in Blender through the use of a facial rig, the edit mode and the sculpt mode. Starting with the viseme blendshapes used for audio based tracking, the expression blendshapes and the basic vrm blendshapes. ARkit blendshapes can be added on top as an add-on!</p>    
                 <br>
                 <h1>Unity conversion</h1>
-                <p>Lastly the model is imported into Unity. Here, physics, constraints and colliders will be added. When this is done the model is exported as a vrm and vsf file and then tested.</p>
+                <p>Lastly the model is imported into Unity. Here, physics, constraints and colliders will be added. When this is done the model is exported as a vrm/vsf file and then tested.</p>
                 <br>
             </div>
-            <div class="process__image-container">
-                <video class="process__image" src="assets/images/devon_showcase.mp4" type="video/mp4" autoplay loop></video>
+            <div class="process__image-container" style="order: 4;">
+                <video class="process__image" src="assets/images/process_unity.mp4" type="video/mp4" autoplay loop></video>
             </div>
-            <div class="process__text process__text--last">
+            <div class="process__text process__text--last" style="order: 4;">
                 <h1>And done!</h1>
-                <p>Your model is finished and ready for use! All the files will be sent to you after payment and if you run into any problems within the first week i'll try to fix them free of charge!</p>        
+                <p>Your model is finished and ready for use! All the files will be sent to you after payment and if you run into any problems within the first week of delivery i'll try to fix them free of charge!</p>        
             </div>
         </div>
     `,

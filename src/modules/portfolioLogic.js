@@ -145,7 +145,7 @@ const addPortfolioLogic = () => {
         let htmlItemViewerInfo = ``
         htmlItemViewerInfo = `
             <h1 class="portfolio-image-viewer__title">${portfolioItem.title}</h1>
-            <p class="portfolio-image-viewer__link">${portfolioItem.twitter.name}</p>
+            <a href="${portfolioItem.twitter.link}"target="_blank"><p class="portfolio-image-viewer__link">${portfolioItem.twitter.name}</p></a>
             <p class="portfolio-image-viewer__date">${portfolioItem.date}</p>
         `
         imageViewerInfo.innerHTML = htmlItemViewerInfo 

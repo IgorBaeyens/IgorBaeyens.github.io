@@ -267,9 +267,47 @@ footer p {
     }
 }
 
-//////////
-// news //
-//////////
+/////////////////////////////////////////////////////////////////////////////////////////
+// home /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+ 
+.banner {
+    // &__container {
+    //     height: 400px;
+    //     // width: 100%;
+    //     border: $colorWhite solid 2px;
+    // }
+    // position: relative;
+
+    &__title {
+        position: absolute;
+        // -webkit-text-stroke: #9de4f4 1px;
+        -webkit-text-stroke: $colorBlack 1px;
+        text-shadow: 0px 0px 10px $colorBlue;
+        font-size: 60px;
+        line-height: 90%;
+        bottom: 30%;
+        left: 20%;
+        transform: rotate(-10deg);
+    }
+
+    &__image {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        
+    }
+    
+    &__background {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgb(68, 66, 94) 0%, rgb(14, 16, 48) 100%);
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// news /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
 
 .news {
     &__items {
@@ -294,9 +332,9 @@ footer p {
     }
 }
 
-///////////////
-// portfolio //
-///////////////
+/////////////////////////////////////////////////////////////////////
+// portfolio ////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
 .portfolio {
 
@@ -392,27 +430,40 @@ footer p {
 }
 
 .carousel {
-    overflow: hidden;
-    border-radius: 14px;
-    background-color: #060c22;
-    
-    height: 100%;
+    overflow: hidden; //keep
+    background-color: #060c22; //keep   
+    height: 100%; //keep
+    &--portfolio {
+        border-radius: 14px;
+    }
+    &--home {
+        border-radius: 0;
+    }
 
     &__slider {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 100%;
-        aspect-ratio: 16 / 9;
+        display: flex; //keep
+        flex-direction: column; //keep
+        flex-wrap: wrap; //keep
+        width: 100%; //keep
+        height: 100%; //keep
+        &--portfolio {
+            // aspect-ratio: 16 / 9;
+
+        }
+        &--home {
+            height: 400px;
+            border-top: $colorWhite solid 3px;
+            border-bottom: $colorWhite solid 3px;
+        }
     }
     
-
     &__slide { 
-        position: relative;
-        width: 100%;
-        height: 100%;
-        
+        position: relative; //keep
+        width: 100%; //keep
+        height: 100%; //keep
+        &--home {
+
+        }
     }
 }
 
@@ -453,9 +504,9 @@ footer p {
     
 }
 
-////////////////
-// commission //
-////////////////
+//////////////////////////////////////////////////////////////////////
+// commission ////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
 .commission {
     // display: flex;
@@ -496,18 +547,21 @@ footer p {
         grid-template-rows: auto;
         justify-items: center;
         align-items: center;
+        
     }
 }
 
 .process {
     &__text {
         grid-column: span 3;
-        // margin-bottom: 60px;
 
+        // order: 1;
 
         &--last {
             grid-column-start: 2;
             grid-column-end: span 3;
+
+            // order: 3;
         }
         &--last h1 {
             text-align: center;
@@ -519,6 +573,8 @@ footer p {
         width: 80%;
         justify-self: center;
         align-self: center;
+
+        // order: 1;
     }
 
     &__image {
@@ -684,28 +740,55 @@ footer p {
 
     
         &__text {
-
             font-size: $fontSizeLarge;
         }
     }
 
-    ////////////////
-    // commission // 
-    ////////////////
+    .banner {
+        &__title {
+            font-size: 40px;
+            bottom: 15%;
+        }
+    }
 
+    ///////////////////////////////////////////////////////////////
+    // portfolio //////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+
+    .carousel {
+
+        &--portfolio {
+
+        }
+        &--home {
+
+        }
     
+        &__slider {
 
-    ///////////////
-    // portfolio //
-    ///////////////
+            &--portfolio {
+    
+            }
+            &--home {
+                height: 200px;
+            }
+        }
+        
+        &__slide { 
+      
+            &--home {
+    
+            }
+        }
+    }
 
     .image-viewer__dot {
         width: 18px;
     }
 
-    ////////////////
-    // commission //
-    ////////////////
+    ////////////////////////////////////////////////////////////////
+    // commission //////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
     
     .comm__tabs {
         width: 100%;
@@ -725,6 +808,13 @@ footer p {
             grid-column: span 5;
         }
     
+        &__text__right {
+            order: 2 !important;
+        }
+        &__image-container__left {
+            order: 3 !important;
+        }
+
         &__image-container {
             grid-column: span 5;
         }
