@@ -29,10 +29,25 @@ slideUpAnimationTmln.to(commHtmlText, {opacity: 0, translateY: 100, duration: 0.
 slideUpAnimationTmln.to(commHtmlText, {opacity: 1, translateY: 0, duration: 0.8, delay: 0.4, ease: "Power1.easeInOut"})
 slideUpAnimationTmln.paused(true)
 
+const prices = {
+    startingPriceMin: "1200 EU",
+    startingPriceMax: "1800 EU",
+    vrm: "150 EU",
+    vsf: "200 EU",
+    baseModel: "200 EU",
+    ARKit: "150 EU",
+    expressionMin: "20 EU",
+    expressionMax: "40 EU",
+    outfitMin: "200 EU",
+    outfitMax: "400 EU",
+    NDA: "10%",
+    commercialUse: "40%"
+}
+
 const text = {
     prices: `
         <h1>Character model</h1>
-        <p>The starting price for a character model ranges from <mark>800 EU to 1200 EU</mark> this includes:</p>
+        <p>The starting price for a character model ranges from <mark>${prices.startingPriceMin} to ${prices.startingPriceMax}</mark> this includes:</p>
         <ul>
             <li>Character in FBX format</li>
             <li>The Blender file included with animation rig</li>
@@ -43,14 +58,14 @@ const text = {
         <br>
         <p>Add-ons:</p>
         <ul>
-            <li>VRM format for vtubing (more used but less quality and features): <mark>150 EU</mark</li>
-            <li>VSF format for vtubing (less used but more quality and features): <mark>200 EU</mark></li>
-            <li>textured and rigged base model (makes it easier to add future outfits): <mark>150 EU</mark></li>
-            <li>ARkit blendshapes: <mark>100 EU</mark></li>
-            <li>extra expressions: <mark>20 EU~40 EU each</mark></li>
-            <li>extra outfits: <mark>200 EU~400 EU each</mark></li>
-            <li>Non Disclosure Agreement: <mark>10% of the commission price</mark></li>
-            <li>Commercial Use: <mark>40% of the commission price</mark></li>
+            <li>VRM format for vtubing: <mark>${prices.vrm}</mark</li>
+            <li>VSF format for vtubing (better quality than VRM but is supported less): <mark>${prices.vsf}</mark></li>
+            <li>textured and rigged base model (makes it easier for artists to add future outfits): <mark>${prices.baseModel}</mark></li>
+            <li>ARkit blendshapes: <mark>${prices.ARKit}</mark></li>
+            <li>extra expressions: <mark>${prices.expressionMin}~${prices.expressionMax} each</mark></li>
+            <li>extra outfits: <mark>${prices.outfitMin}~${prices.outfitMax} each</mark></li>
+            <li>Non Disclosure Agreement: <mark>${prices.NDA} of the commission price</mark></li>
+            <li>Commercial Use: <mark>${prices.commercialUse} of the commission price</mark></li>
         </ul>
         <br>
         <p>Be sure to add more reference if you want an extra outfit or accessory. Otherwise I cannot accurately create what you want me to.
@@ -164,5 +179,7 @@ const text = {
         <p><a href="https://forms.gle/ZyPk4XVTiTTNDV1U8" target="_blank" class="commission-button">Commission Zel</a></p> 
     `
 }
+
+
 
 export { addCommissionLogic }
