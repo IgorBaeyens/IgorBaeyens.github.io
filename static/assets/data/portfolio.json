@@ -96,7 +96,7 @@
         },
         {
             "id": 7,
-            "title": "Star Hopper Galaxy (coat)",
+            "title": "Star Hopper Galaxy (outfit)",
             "type": "Commission",
             "date": "Oct 27, 2023",
             "twitter": {
@@ -107,6 +107,23 @@
                 "image1": "assets/images/star_coat_thumbnail.png",
                 "image2": "assets/images/star_coat_ref-sheet.png",
                 "image3": "assets/images/star_coat_showcase.mp4"
+            }
+        },
+        {
+            "id": 8,
+            "title": "Juni Kodama (head)",
+            "type": "Commission",
+            "date": "Jan 7, 2024",
+            "twitter": {
+                "name": "@JuniKodama",
+                "link": "https://twitter.com/JuniKodama"
+            },
+            "images": {
+                "image1": "assets/images/juni_thumbnail.png",
+                "image2": "assets/images/juni_showcase.mp4",
+                "image3": "assets/images/juni_branches.mp4",
+                "image4": "assets/images/juni_arkit.mp4",
+                "image5": "assets/images/juni_wiggle.mp4"
             }
         }
     ]
