@@ -6,7 +6,8 @@ import { addPortfolioLogic } from './modules/portfolioLogic'
 import { addCommissionLogic } from './modules/commissionLogic'
 
 addSiteLogic()
-if (document.URL.includes("portfolio")) {
+// having empty space here is a hack
+if (document.URL.includes("")) {
   addPortfolioLogic()
 } else if (document.URL.includes("commission")) {
   addCommissionLogic()
