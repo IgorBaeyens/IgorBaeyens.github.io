@@ -33,7 +33,7 @@ const addSiteLogic = () => {
         }
         openPortraitMenu.paused(true)
     }
-    portraitMenuLogic()
+    // portraitMenuLogic()
     
 }
 
