@@ -125,5 +125,41 @@
                 "image4": "assets/images/juni_arkit.mp4",
                 "image5": "assets/images/juni_wiggle.mp4"
             }
+        },
+        {
+            "id": 9,
+            "title": "Lierakyu",
+            "type": "Commission",
+            "date": "jul 18, 2024",
+            "twitter": {
+                "name": "@lierakyu",
+                "link": "https://twitter.com/lierakyu"
+            },
+            "images": {
+                "image1": "assets/images/lierakyu_thumbnail.png",
+                "image2": "assets/images/lierakyu_showcase.mp4",
+                "image3": "assets/images/lierakyu_ref-sheet.png",
+                "image4": "assets/images/lierakyu_textures.mp4",
+                "image5": "assets/images/lierakyu_animation.mp4",
+                "image6": "assets/images/lierakyu_tracking.mp4"
+            }
+        },
+        {
+            "id": 10,
+            "title": "Crowmeda",
+            "type": "Commission",
+            "date": "jul 20, 2024",
+            "twitter": {
+                "name": "@crowmeda_",
+                "link": "https://twitter.com/crowmeda_"
+            },
+            "images": {
+                "image1": "assets/images/crowmeda_thumbnail.png",
+                "image2": "assets/images/crowmeda_showcase.mp4",
+                "image3": "assets/images/crowmeda_ref-sheet.png",
+                "image4": "assets/images/crowmeda_tex.mp4",
+                "image5": "assets/images/crowmeda_rigging.mp4",
+                "image6": "assets/images/crowmeda_tracking.mp4"
+            } 
         }
     ]
