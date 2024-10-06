@@ -4,6 +4,7 @@
             "title": "Zel Kanis",
             "type": "Persona",
             "date": "Nov 8, 2022",
+            "dateNumerical": "20221108",
             "twitter": {
                 "name": "@KanisZel",
                 "link": "https://twitter.com/kaniszel"
@@ -19,6 +20,7 @@
             "title": "Ninomae Ina'nis",
             "type": "Fan-art",
             "date": "Nov 29, 2022",
+            "dateNumerical": "20221129",
             "twitter": {
                 "name": "@ninomaeinanis",
                 "link": "https://twitter.com/ninomaeinanis"
@@ -33,6 +35,7 @@
             "title": "Star Hopper Galaxy",
             "type": "Commission",
             "date": "Mar 18, 2023",
+            "dateNumerical": "20230318",
             "twitter": {
                 "name": "@StarHopperGalax",
                 "link": "https://twitter.com/StarHopperGalax"
@@ -48,6 +51,7 @@
             "title": "Preji Leviathan",
             "type": "Commission",
             "date": "Jun 1, 2023",
+            "dateNumerical": "20230601",
             "twitter": {
                 "name": "@PrejiLeviathanV",
                 "link": "https://twitter.com/PrejiLeviathanV"
@@ -64,6 +68,7 @@
             "title": "Zel Kanis V2",
             "type": "Persona",
             "date": "Jul 12, 2023",
+            "dateNumerical": "20230712",
             "twitter": {
                 "name": "@KanisZel",
                 "link": "https://twitter.com/KanisZel"
@@ -82,6 +87,7 @@
             "title": "Servo Skull",
             "type": "Commission",
             "date": "Sep 15, 2023",
+            "dateNumerical": "20230915",
             "twitter": {
                 "name": "@adeptus_dankus",
                 "link": "https://twitter.com/adeptus_dankus"
@@ -99,6 +105,7 @@
             "title": "Star Hopper Galaxy (outfit)",
             "type": "Commission",
             "date": "Oct 27, 2023",
+            "dateNumerical": "20231027",
             "twitter": {
                 "name": "@StarHopperGalax",
                 "link": "https://twitter.com/StarHopperGalax"
@@ -114,6 +121,7 @@
             "title": "Juni Kodama (head)",
             "type": "Commission",
             "date": "Jan 7, 2024",
+            "dateNumerical": "20240107",
             "twitter": {
                 "name": "@JuniKodama",
                 "link": "https://twitter.com/JuniKodama"
@@ -131,6 +139,7 @@
             "title": "Lierakyu",
             "type": "Commission",
             "date": "jul 18, 2024",
+            "dateNumerical": "20240718",
             "twitter": {
                 "name": "@lierakyu",
                 "link": "https://twitter.com/lierakyu"
@@ -149,6 +158,7 @@
             "title": "Crowmeda",
             "type": "Commission",
             "date": "jul 20, 2024",
+            "dateNumerical": "20240720",
             "twitter": {
                 "name": "@crowmeda_",
                 "link": "https://twitter.com/crowmeda_"
@@ -160,6 +170,42 @@
                 "image4": "assets/images/crowmeda_tex.mp4",
                 "image5": "assets/images/crowmeda_rigging.mp4",
                 "image6": "assets/images/crowmeda_tracking.mp4"
+            } 
+        },
+        {
+            "id": 11,
+            "title": "Urban Samurai",
+            "type": "Fan-art",
+            "date": "feb 28, 2024",
+            "dateNumerical": "20240228",
+            "twitter": {
+                "name": "Bai OU",
+                "link": "https://www.artstation.com/artwork/0464q5"
+            },
+            "images": {
+                "image1": "assets/images/samurai_thumbnail.png",
+                "image2": "assets/images/samurai_showcase.mp4",
+                "image3": "assets/images/samurai_ref-sheet1.png",
+                "image4": "assets/images/samurai_ref-sheet2.png",
+                "image5": "assets/images/samurai_uv.png"
+            } 
+        },
+        {
+            "id": 12,
+            "title": "Martial arts mecha-girl",
+            "type": "Fan-art",
+            "date": "oct 10, 2024",
+            "dateNumerical": "20241010",
+            "twitter": {
+                "name": "@lcbutter",
+                "link": "https://twitter.com/lcbutter"
+            },
+            "images": {
+                "image1": "assets/images/mecha-girl_thumbnail.png",
+                "image2": "assets/images/mecha-girl_showcase.mp4",
+                "image3": "assets/images/mecha-girl_ref-sheet1.png",
+                "image4": "assets/images/mecha-girl_ref-sheet2.png",
+                "image5": "assets/images/mecha-girl_ref-sheet3.png"
             } 
         }
     ]
