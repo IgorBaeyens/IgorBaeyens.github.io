@@ -207,5 +207,70 @@
                 "image4": "assets/images/mecha-girl_ref-sheet2.png",
                 "image5": "assets/images/mecha-girl_ref-sheet3.png"
             } 
+        },
+        {
+            "id": 13,
+            "title": "Megalodon",
+            "type": "Commission",
+            "date": "jan 11, 2025",
+            "dateNumerical": "20250111",
+            "twitter": {
+                "name": "@MegalodonVT",
+                "link": "https://twitter.com/MegalodonVT"
+            },
+            "images": {
+                "image1": "assets/images/megalodon_thumbnail.png",
+                "image2": "assets/images/megalodon_showcase.mp4",
+                "image3": "assets/images/megalodon_turntable.mp4",
+                "image4": "assets/images/megalodon_ref-sheet.png"
+            } 
+        },
+        {
+            "id": 14,
+            "title": "Abaddon",
+            "type": "Commission",
+            "date": "jan 24, 2025",
+            "dateNumerical": "20250124",
+            "twitter": {
+                "name": "@AbaddonVT",
+                "link": "https://twitter.com/AbaddonVT"
+            },
+            "images": {
+                "image1": "assets/images/abaddon_thumbnail.png",
+                "image2": "assets/images/abaddon_turntable.mp4",
+                "image3": "assets/images/abaddon_ref-sheet.png"
+            } 
+        },
+        {
+            "id": 15,
+            "title": "Saruei (outfit)",
+            "type": "Commission",
+            "date": "feb 14, 2025",
+            "dateNumerical": "20250214",
+            "twitter": {
+                "name": "@Saruei",
+                "link": "https://twitter.com/saruei"
+            },
+            "images": {
+                "image1": "assets/images/saruei_thumbnail.png",
+                "image2": "assets/images/saruei_showcase.mp4",
+                "image3": "assets/images/saruei_ref-sheet.png"
+            } 
+        },
+        {
+            "id": 16,
+            "title": "Lua Lucky (outfit)",
+            "type": "Commission",
+            "date": "mar 12, 2025",
+            "dateNumerical": "20250312",
+            "twitter": {
+                "name": "@LuaVLucky.bsky",
+                "link": "https://bsky.app/profile/luavlucky.bsky.social"
+            },
+            "images": {
+                "image1": "assets/images/lua-lucky_thumbnail.png",
+                "image2": "assets/images/lua-lucky_showcase.mp4",
+                "image3": "assets/images/lua-lucky_ref-sheet.png"
+            } 
         }
     ]
