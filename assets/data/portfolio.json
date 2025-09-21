@@ -272,5 +272,37 @@
                 "image2": "assets/images/lua-lucky_showcase.mp4",
                 "image3": "assets/images/lua-lucky_ref-sheet.png"
             } 
+        },
+        {
+            "id": 17,
+            "title": "Lideo (mascot)",
+            "type": "Commission",
+            "date": "may 7, 2025",
+            "dateNumerical": "20250507",
+            "twitter": {
+                "name": "@lideovt",
+                "link": "https://x.com/lideovt"
+            },
+            "images": {
+                "image1": "assets/images/lideo_mascot_thumbnail.png",
+                "image2": "assets/images/lideo_showcase_both.mp4",
+                "image3": "assets/images/lideo_showcase_mascot.mp4"
+            } 
+        },
+        {
+            "id": 18,
+            "title": "Lideo",
+            "type": "Commission",
+            "date": "aug 24, 2025",
+            "dateNumerical": "20250824",
+            "twitter": {
+                "name": "@lideovt",
+                "link": "https://x.com/lideovt"
+            },
+            "images": {
+                "image1": "assets/images/lideo_thumbnail.png",
+                "image2": "assets/images/lideo_showcase_both.mp4",
+                "image3": "assets/images/lideo_showcase_lideo.mp4"
+            } 
         }
     ]
