@@ -304,5 +304,68 @@
                 "image2": "assets/images/lideo_showcase_both.mp4",
                 "image3": "assets/images/lideo_showcase_lideo.mp4"
             } 
+        },
+        {
+            "id": 19,
+            "title": "Eznick",
+            "type": "Commission",
+            "date": "nov 1, 2025",
+            "dateNumerical": "20251101",
+            "twitter":{
+                "name": "@Eznickgames",
+                "link": "https://x.com/Eznickgames"
+            },
+            "images": {
+                "image1": "assets/images/eznick_thumbnail.png",
+                "image2": "assets/images/eznick_showcase.mp4",
+                "image3": "assets/images/eznick_twitter1.mp4",
+                "image4": "assets/images/eznick_twitter2.mp4"
+            } 
+        },
+        {
+            "id": 20,
+            "title": "Virelia",
+            "type": "Commission",
+            "date": "jan 22, 2026",
+            "dateNumerical": "20260122",
+            "twitter":{
+                "name": "",
+                "link": ""
+            },
+            "images": {
+                "image1": "assets/images/virelia_thumbnail.png",
+                "image2": "assets/images/virelia_showcase.mp4",
+                "image3": "assets/images/virelia_ref-sheet.png"
+            } 
+        },
+        {
+            "id": 21,
+            "title": "Vatic",
+            "type": "Commission",
+            "date": "jun 04, 2026",
+            "dateNumerical": "20260604",
+            "twitter":{
+                "name": "@VaticVtuber",
+                "link": "https://x.com/VaticVtuber"
+            },
+            "images": {
+                "image1": "assets/images/vatic_thumbnail.png",
+                "image2": "assets/images/vatic_showcase.mp4"
+            } 
+        },
+        {
+            "id": 22,
+            "title": "Saruei (ringmaster)",
+            "type": "Commission",
+            "date": "apr 25, 2026",
+            "dateNumerical": "20260425",
+            "twitter":{
+                "name": "@Saruei",
+                "link": "https://twitter.com/saruei"
+            },
+            "images": {
+                "image1": "assets/images/saruei_ringmaster_thumbnail.png",
+                "image2": "assets/images/saruei_ringmaster_showcase.mp4"
+            } 
         }
-    ]
+]
